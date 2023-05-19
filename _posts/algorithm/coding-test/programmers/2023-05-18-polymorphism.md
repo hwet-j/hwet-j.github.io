@@ -1,5 +1,5 @@
 ---
-title:  "ㅁㄴㅇㄻㄴㅇㄻㄴㅇㄻㄴㅇㄻㄴㅇㄹ" 
+title:  "[C++로 풀이] polymor (스택, 덱) ⭐⭐⭐" 
 
 categories:
   - Programmers
@@ -9,62 +9,167 @@ tags:
 toc: true
 toc_sticky: true
 
-date: 2023-05-23
-last_modified_at: 2023-05-24
+date: 2021-05-22
+last_modified_at: 2021-05-22
 ---
 
-# 📌 숫자 블록
+# 📌 110 옮기기
 
-> 난이도 ⭐⭐⭐⭐
+> 난이도 ⭐⭐⭐
 
 ## 🚀 문제
 
-![image](https://user-images.githubusercontent.com/42318591/119258099-3c729c80-bc03-11eb-819d-ea0af0937307.png)
+![image](https://user-images.githubusercontent.com/42318591/119221447-699f4c00-bb2a-11eb-879d-a18e255166aa.png)
+
+![image](https://user-images.githubusercontent.com/42318591/119221453-6f952d00-bb2a-11eb-8fa7-e13e7fdb1caf.png)
 
 <br>
 
-## 🚀 내 풀이 ⭕
+## 🚀 내 풀이
 
-> 자기 자신을 제외하고 10,000,000 을 넘지 않는 선에서의 가장 큰 약수
+> [월간 코드 팰린지 시즌2 : 5월 문제 해설](https://prgms.tistory.com/57?category=882795)
 
-18 의 약수는 1, 2, 3, 6, 9, 18 이다. 18 번 도로에 설치되는 블록은 9 번 블록이 된다.(n 번 블록은 n * 2 번 도로부터 설치가 되기 때문) 즉, 약수들 중 <u>자기 자신을 제외한 수들 중에서 가장 큰 수의 블록</u>이 설치 되는 것이다. 자기 자신을 제외한 가장 큰 약수의 짝꿍은 1 을 제외한 가장 작은 약수가 된다.(즉 이 경우엔 2 가 된다. 18 / 9 는 2 이다.) <u>이 가장 작은 약수를 구해서</u> 도로 위치에서 나눠주면 자기 자신 제외 가장 큰 약수를 구할 수 있게 된다.(아무래도 뒤에서부터 검사하는 것 보단 앞에서부터 검사하는게..⭐ 게다가 `sqrt(도로 번호)` 까지만 검사하면 된다. 약수 짝꿍의 기준이 되는 곳이기 때문)
+`s` 원소마다 DFS 로 풀고 제출했다가 온갖 시간 초과 결과를 마주한 후..⭐ (`s`의 최대 원소는 백 만개이니 너무나 당연한 결과다. 반성해야 돼..!!!) 프로그래머스 공식 해설을 본 후에 다시 풀이하게 되었다.
 
-다만, 약수가 1 과 자기 자신을 제외하고는 없는 <u>소수들의 경우에는 자기 자신 제외 가장 큰 약수가 없으므로 1 을 추가해주면 된다.</u> 1 번 블록 말고는 다른 블록이 설치될 일이 없기 때문.
+<u>스택!!!!!을 사용하면 O(N) 으로 풀 수 있구나..</u> 작년에 풀었던 [주식 가격](https://ansohxxn.github.io/programmers/kit8/) 문제가 생각났다.(이왕 이렇게 된거 주식 가격 문제도 스택을 사용해 다시 풀이했다. 이때 내가 스택으로 안 풀어 봤네..)
 
-주의해야할 사항이 하나 더 있는데, 블록의 번호는 최대 `10,000,000` 까지만 있다는 것이다. 즉, 설치할 수 있는 블록은 `10,000,000` 번 블록까지이기 때문에 자기 자신을 제외한 가장 큰 약수가 `10,000,000` 를 넘는 경우엔 설치될 수가 없다. 따라서 이런 경우엔 `10,000,000`을 넘지 않는 것 중에 가장 큰 약수를 찾아야 한다.
+### 💡 로직
 
-또! 주의해야할 사항이 있는데, `begin` 이 1 이라면, 즉 1 번 도로에 어느 블록이 최종적으로 설치되는지도 구해야할 땐, 1 번 도로는 항상 0 번 블록이 설치되므로 0 을 삽입해준다.
+- 하나의 문자열 `s[i]`에 대해
+  - 1️⃣ 모든 "110" 을 찾아 그 개수(`count`)를 세고 + 제거한다.
+    - 이때 스택을 사용하면
+      - \\(O(3N = N)\\) 선형시간으로 찾아낼 수 있으며
+      - 11<u>110</u>0 👉 <u>110</u> 이렇게 110 제거를 통해 새롭게 만들어지는 110 또한 제거할 수 있게 된다. 11110 까지 스택에 들어있다가 110 은 제거하고 11 만 스택에 남게 되는데 이 상태에서 새로운 0 이 들어오면 다시 110 이 되야 제거 가능. [올바른 괄호](https://ansohxxn.github.io/programmers/67/) 문제처럼 생각하면 된다.
+      - 스택의 `top` 3 개가 "110" 이면 이 3 개를 `pop`한다. "110" 이 아니라면 현재 문자를 `push` 한다.
+    - 이 과정이 완료된 후 "110" 이 아예 없었다면 `answer[i]`에 `s[i]`를 그대로 넣고 종료한다. (이 경우엔 다음 과정 실행하면 안돼서)
+  - 2️⃣ 스택에 남아 있는 문자들("110"이 모두 제거된 형태의 문자열)을 꺼내 문자열로 만듬과 동시에 `count` 개수의 연속된 "110" 문자열을 삽입할 위치가 될 인덱스를 찾는다.
+    - 이 삽입 위치가 될 인덱스는 <u>문자열의 오른쪽 끝에서부터 연속된 1 이 시작되는 곳.</u>이 되어야 한다. (그러니, 오른쪽 끝 문자가 0이면 그냥 맨 뒤에 추가)
+      - 왜냐하면 "111111..." **연속된 1 보다 "110" 이 사전적으로 더 앞서기 때문**이다. 예를 들어 스택에 "1011" 이렇게 남아 있는 상태였다면 `count` 개수의 연속된 "110" 은 10 ✔ 11 체크한 이 부분에 들어가야 할 것이다.
+  - 3️⃣ 이전 과정에서 구한 삽입 인덱스에(오른쪽에서부터 연속된 1이 시작되는 곳) `count` 개수의 연속된 "110"을 삽입하면 된다. 이렇게 완성된 문자열을 `answer[i]`에 넣고 다음 `s[i]` 문자열 검사하러 떠나면 된다.
+
+<br>
+
+### 🔥 stack 사용한 풀이
 
 ```cpp
 #include <string>
 #include <vector>
-#include <cmath>
+#include <stack>
 
 using namespace std;
 
-vector<int> solution(long long begin, long long end) {
-    vector<int> answer;
-    for(int num = begin; num <= end; ++num){
-        if (num == 1){
-            answer.push_back(0);
-            continue;
-        }
-        bool found = false;
-        // 1️⃣ 처음으로 num % i == 0 가 되는 경우 -> i 는 가장 작은 약수. 고로 num / i 는 자기 자신을 제외한 가장 큰 약수가 된다. (i 의 짝꿍 약수)
-        // 2️⃣ 만약 num / i 가 (자기 자신 제외 가장 큰 약수) 10,000,000 을 넘는다면 자연스럽게 다음 반복을 통해 더 커진, 증가된 i 부터 검사해나가면 된다. i 가 증가하면 num / i 는 감소한다. 이렇게 10,000,000 을 넘지 않는 선에서의! 가장 큰 약수를 구하면 된다.(num/i 가 10,000,000 을 넘지 않으면서 동시에 약수가 최는 최초의 수)
-        for (int i = 2; i <= sqrt(num); ++i){
-            if (num % i == 0 && num / i <= 10000000){
-                answer.push_back(num / i);
-                found = true;
-                break;
-            }
-        }
-        // 소수이거나 
-        // sqrt(num)이하 약수의 짝꿍들이 모두 10,000,000 보다 큰 수 
-        // 즉, 위 for문의 if 에 한번도 걸린적이 없음
-        if (!found) 
-            answer.push_back(1);
-    }
+vector<string> solution(vector<string> s) {
+	vector<string> answer(s.size());
+
+	for (int i = 0; i < s.size(); ++i) {
+		stack<char> st;
+		int count = 0; // s[i] 문자열에서 만들 수 있는 "110" 개수
+		
+        // 1️⃣ 모든 "110" 을 찾아 그 개수(count)를 세고 제거한다.
+		for (int j = 0; j < s[i].length(); ++j) {
+            st.push(s[i][j]);
+			if (st.size() >= 3) {
+                // 스택의 위에 있는 3 개를 일단 pop 시키자. (스택은 top 을 제외한 중간 원소 임의 접근 불가능하기 때문에 일단 빼내서 볼 수 밖에 없다. ㅠ)
+                char three = st.top(); st.pop();
+				char two = st.top(); st.pop();
+				char one = st.top(); st.pop();
+
+                // 스택의 위에 있는 3 개가 1 1 0 이라면 count 를 증가시킨다. (이미 pop 시켰음)
+				if (one == '1' && two == '1' && three == '0') {
+					++count;
+					continue;
+				}
+                // 아니라면 다시 스택에 넣어 준다.
+				else {
+					st.push(one);
+					st.push(two);
+					st.push(three);
+				}
+			}
+		}
+        // "110" 이 하나도 없는 문자열이라면 현재 모습 그대로 answer 에 넣고 끝낸다.
+		if (count == 0) {
+			answer[i] = s[i];
+			continue;
+		}
+
+        // 2️⃣ 스택에 남아 있는 문자들("110"이 모두 제거된 형태의 문자열)을 꺼내 문자열로 만듬과 동시에 count 개수의 연속된 "110" 문자열을 삽입할 위치가 될 인덱스를 찾는다. 
+        // 스택에 1011 이 있는 상태라면 1👉1👉0👉1 순으로 꺼내지게 되며 각각 str의 맨 앞에 삽입한다. 결론적으로 str은 "1011" 이 되고 인덱스는 2가 된다. 
+		int insert_idx = st.size(); // 삽입할 위치가 될 인덱스
+		string str = ""; 
+        // 스택에서 하나씩 꺼내면서 연속된 1 인지 검사. 인덱스 업뎃. 동시에 꺼낸 문자는 str 맨 앞에 삽입 
+		while (!st.empty() && st.top() == '1') {
+			--insert_idx; 
+			str = st.top() + str;
+			st.pop();
+		}
+        // 연속된 1은 다 빼냈고, 스택에 있는 나머지 문자들 꺼내서 str 맨 앞에 삽입 
+		while (!st.empty()) {
+			str = st.top() + str;
+			st.pop();
+		}
+
+        // 3️⃣ 이전 과정에서 구한 삽입 인덱스에(오른쪽에서부터 연속된 1이 시작되는 곳) count 개수의 연속된 "110"을 삽입하면 된다.
+		while (count-- > 0) 
+			str.insert(insert_idx, "110");
+        // 완성! 
+		answer[i] = str;
+	}
+
+    return answer;
+}
+```
+
+<br>
+
+### 🔥 deque 사용한 풀이
+
+다른 분의 풀이 중에 `deque`을 사용하신 분이 계셔서 적용해보았다. `deque` 은 여타 배열처럼 `[]` 써서 중간 원소에 대한 접근하는게 가능하다. 따라서 `deque`을 쓰면 스택처럼 일일이 빼고난 후에 검사할 필요는 없고, 뒤에 있는 세 원소가 110 인게 확인이 되면 그때서야 제거하면 된다. `deque`도, `stack`도 제거 연산이 O(1) 으로 매우 빠른 자료구조다! (deque 은 중간 원소 삭제가 아닌 `pop_back`, `pop_front` 한정)
+
+```cpp
+#include <string>
+#include <vector>
+#include <deque>
+
+using namespace std;
+
+vector<string> solution(vector<string> s) {
+	vector<string> answer(s.size());
+
+	for (int i = 0; i < s.size(); ++i) {
+		deque<char> dq;
+		int count = 0;
+		
+		for (int j = 0; j < s[i].length(); ++j) {
+			dq.push_back(s[i][j]);
+			int n = dq.size();
+			if (n >= 3 && dq[n - 3] == '1' && dq[n - 2] == '1' && dq[n - 1] == '0') {
+				++count;
+				dq.pop_back(); 
+				dq.pop_back(); 
+				dq.pop_back();
+			}
+		}
+
+		if (count == 0) {
+			answer[i] = s[i];
+			continue;
+		}
+
+		int insert_idx = dq.size();
+		string str = "";
+		bool end_111 = false;
+		for (int i = dq.size() - 1; i >= 0; --i) {
+			if (!end_111 && dq[i] == '1') --insert_idx;
+			else end_111 = true;
+			str = dq[i] + str;
+		}
+
+		while (count-- > 0) 
+			str.insert(insert_idx, "110");
+		answer[i] = str;
+	}
+
     return answer;
 }
 ```
