@@ -5,7 +5,7 @@ excerpt : "다형성(polymorphism)을 설명과 예제로 이해해보자."
 categories: 
 	- Java
 tags:
-  - [polymorphism]
+  - [Java, polymorphism]
   
 toc: true
 toc_sticky: true
