@@ -16,7 +16,7 @@ minimal_mistakes_skin    : "dark" # "default"  "air", "aqua", "contrast", , "dir
 
 # Site Settings
 locale                   : "ko-KR"
-title                    : " 평생 공부 블로그 : Today I Learned‍ 🌙"
+title                    : "Hwet 블로그 : I'm just trying to be a better person than I was yesterday 🌙"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "식빵맘💛"
@@ -116,7 +116,7 @@ author:
     #- label: "Facebook"
     #  icon: "fab fa-fw fa-facebook-square"
       # url: "https://facebook.com/"
-    
+
 
 # Site Footer
 footer:
@@ -130,7 +130,7 @@ footer:
     #- label: "Facebook"
     #  icon: "fab fa-fw fa-facebook-square"
       # url:
-    
+
       # url:
     #- label: "GitLab"
     #  icon: "fab fa-fw fa-gitlab"
