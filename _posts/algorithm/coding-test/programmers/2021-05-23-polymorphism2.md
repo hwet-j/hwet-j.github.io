@@ -4,7 +4,7 @@ title:  "[Java] 다형성의 이해2"
 categories: 
 	- Programmers
 tags:
-  - [polymorphism]
+  - [polymorphism, Coding Test]
   
 toc: true
 toc_sticky: true
