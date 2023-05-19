@@ -1,9 +1,14 @@
 ---
 title:  "[Java] 다형성의 이해"
-excerpt : 다형성(polymorphism)을 설명과 예제로 이해해보자.
+excerpt : "다형성(polymorphism)을 설명과 예제로 이해해보자."
 
 categories: 
 	- Java
+tags:
+  - [polymorphism]
+  
+toc: true
+toc_sticky: true
 
 date:   2023-05-17
 last_modified_at: 2023-05-18
@@ -39,4 +44,9 @@ last_modified_at: 2023-05-18
 
 
 
+***
+    🌜 개인 공부 기록용 블로그입니다. 오류나 틀린 부분이 있을 경우 
+    언제든지 댓글 혹은 메일로 지적해주시면 감사하겠습니다! 😄
+
+[맨 위로 이동하기](#){: .btn .btn--primary }{: .align-right}
 
