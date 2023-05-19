@@ -1,5 +1,5 @@
 ---
-title:  "[C++로 풀이] Java44444 (스택, 덱) ⭐⭐⭐" 
+title:  "Java 업로드ㅡㅡ" 
 
 categories:
   - Java
@@ -9,8 +9,8 @@ tags:
 toc: true
 toc_sticky: true
 
-date: 2023-05-13
-last_modified_at: 2023-05-18
+date: 2023-05-18
+last_modified_at: 2023-05-19
 ---
 
 # 📌 110 옮기기
