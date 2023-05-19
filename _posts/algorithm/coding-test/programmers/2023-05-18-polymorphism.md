@@ -2,7 +2,7 @@
 title:  "[C++로 풀이] polymor (스택, 덱) ⭐⭐⭐" 
 
 categories:
-  - Programmers
+  - Java
 tags:
   - [Algorithm, Coding Test]
 
