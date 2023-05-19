@@ -3,7 +3,7 @@ title:  "[Java] 다형성의 이해"
 excerpt : "다형성(polymorphism)을 설명과 예제로 이해해보자."
 
 categories: 
-	- Java
+	- Programmers
 tags:
   - [polymorphism]
   
