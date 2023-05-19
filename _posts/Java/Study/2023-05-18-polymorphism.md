@@ -1,10 +1,11 @@
 ---
-title:  "Java 업로드ㅡㅡ" 
+title:  "[Java] 다형성"
+excerpt: "다형성을 알아보자"
 
 categories:
   - Java
 tags:
-  - [Algorithm, Coding Test]
+  - [Term]
 
 toc: true
 toc_sticky: true
