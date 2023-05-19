@@ -1,7 +1,7 @@
 ---
-title: "Jekyll/Github 블로그 만들기"
+title: "JAVA 정리"
 layout: archive
-permalink: categories/Java
+permalink: categories/java-study
 author_profile: true
 sidebar_main: true
 ---
