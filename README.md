@@ -2,11 +2,14 @@
 
 나의 홈페이지 : <https://hwet-j.github.io/>
 
-🔨🔨🔨🔨🔨🔨🔨🔨🔨🔨🔨🔨🔨🔨🔨🔨
-:construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction:
-:construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction:
-🔨🔨🔨🔨🔨🔨🔨🔨🔨🔨🔨🔨🔨🔨🔨🔨
+#### 지속해서 수정중입니다.
+🔨🔨🔨🔨🔨🔨🔨🔨🔨🔨🔨🔨🔨🔨🔨🔨<br>
+🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧<br>
+🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧<br>
+🔨🔨🔨🔨🔨🔨🔨🔨🔨🔨🔨🔨🔨🔨🔨🔨<br>
 
 ### ansohxxn 님의 코드로 부터 작성되었습니다.
+
 ansohxxn 님의 Github 홈페이지 : https://github.com/ansohxxn
+<br>
 다운받은 코드의 Blog 주소 : <https://ansohxxn.github.io>
