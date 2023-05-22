@@ -61,7 +61,14 @@
                     {% endif %}
                 {% endfor %}
             </ul>
-
+        <span class="nav__sub-title">잡다</span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "IDE" %}
+                        <li><a href="/categories/ide" class="">운동종류 ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
       </li>
       <li>
             <br>
