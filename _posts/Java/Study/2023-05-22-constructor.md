@@ -10,12 +10,14 @@ tags:     # 중요 키워드
 toc: true
 toc_sticky: true
 
+author: Hwet
+
 date: 2023-05-22
 last_modified_at: 2023-05-22
 ---
 
 인터넷에서 검색하여 여러가지를 참고하여 정리하였습니다.    
-[참고1]()
+[참고1](https://wikidocs.net/281)
 {: .notice--warning}
 
 ## 생성자
@@ -41,10 +43,10 @@ last_modified_at: 2023-05-22
     TestClass obj = new TestClass();
 ```
 
-> TestClass: 데이터 타입 (기본형 및 사용자가 정의한 타입)
-> obj: TestClass 데이터 타입으로 선언한 참조변수(객체변수)
-> new: 메모리를 생성하는 키워드, 참조값을 리턴한다. (참조값 ≒ 주소값 / 비슷한 개념)
-> TestClass(): 메모리 생성 후 해당 메모리의 초기화 작업을 담당하는 생성자
+> - TestClass: 데이터 타입 (기본형 및 사용자가 정의한 타입)
+> - obj: TestClass 데이터 타입으로 선언한 참조변수(객체변수)
+> - new: 메모리를 생성하는 키워드, 참조값을 리턴한다. (참조값 ≒ 주소값 / 비슷한 개념)
+> - TestClass(): 메모리 생성 후 해당 메모리의 초기화 작업을 담당하는 생성자
 
 여기서 TestClass()가아닌 TestClass(String)을 호출했다면, String을 매개변수로 가지는 생성자가 해당 참조객체에 선언되어 있어야 한다.
 
