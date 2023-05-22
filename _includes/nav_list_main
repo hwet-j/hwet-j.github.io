@@ -16,15 +16,6 @@
                           {% endif %}
                       {% endfor %}
                   </ul>
-        <span class="nav__sub-title">Workout</span>
-                          <ul>
-                              {% for category in site.categories %}
-                                  {% if category[0] == "Health" %}
-                                      <li><a href="/categories/work-out" class="">운동종류 ({{category[1].size}})</a></li>
-                                  {% endif %}
-                              {% endfor %}
-                          </ul>
-
         <span class="nav__sub-title">Coding Test</span>
             <ul>
                 {% for category in site.categories %}
@@ -47,18 +38,11 @@
                     {% endif %}
                 {% endfor %}
             </ul>
-        <span class="nav__sub-title">ansohxxn's Data</span>
+        <span class="nav__sub-title">Blog & Github</span>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Blog" %}
                         <li><a href="/categories/blog" class="">Blog Dev ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "Design Pattern" %}
-                        <li><a href="/categories/design-pattern" class="">디자인 패턴 ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -69,6 +53,15 @@
                     {% endif %}
                 {% endfor %}
             </ul>
+        <span class="nav__sub-title">Workout</span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Health" %}
+                        <li><a href="/categories/work-out" class="">운동종류 ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+
       </li>
       <li>
             <br>
