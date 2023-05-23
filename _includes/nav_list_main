@@ -57,7 +57,7 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Health" %}
-                        <li><a href="/categories/work-out" class="">운동종류 ({{category[1].size}})</a></li>
+                        <li><a href="/categories/work-out" class="">운동정보 ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -66,6 +66,13 @@
                 {% for category in site.categories %}
                     {% if category[0] == "IDE" %}
                         <li><a href="/categories/ide" class="">IDE ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "IDE" %}
+                        <li><a href="/categories/ide" class="">깜지({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
