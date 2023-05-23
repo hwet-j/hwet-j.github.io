@@ -65,7 +65,7 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "IDE" %}
-                        <li><a href="/categories/ide" class="">운동종류 ({{category[1].size}})</a></li>
+                        <li><a href="/categories/ide" class="">IDE ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
