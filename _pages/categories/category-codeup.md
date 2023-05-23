@@ -10,7 +10,7 @@ sidebar_main: true
 
 ***
 
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=ansohxxn&repo=coding-test)](https://github.com/ansohxxn/coding-test)
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=hwet-j&repo=Coding-test)](https://github.com/hwet-j/Coding-test)
 
 {% assign posts = site.categories.CodeUp %}
 {% for post in posts %} {% include archive-single2.html type=page.entries_layout %} {% endfor %}

@@ -1,5 +1,5 @@
 ---
-title: "Jekyll/Github 블로그 만들기"
+title: "IDE(통합개발환경/Integrated Development Environment) 관련 정보"
 layout: archive
 permalink: categories/ide
 author_profile: true
