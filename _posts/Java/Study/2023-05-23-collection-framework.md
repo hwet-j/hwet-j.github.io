@@ -18,141 +18,56 @@ last_modified_at: 2023-05-23
 
 인터넷에서 검색하여 여러가지를 참고하여 정리하였습니다.    
 [참고1](http://www.tcpschool.com/java/java_collectionFramework_concept)
+[참고2](https://hudi.blog/java-collection-framework-1/)
+[참고3](https://coding-factory.tistory.com/550)
 {: .notice--warning}
 
-## 배열
+## 컬렉션 프레임워크
 
-### 배열의 선언
+### 컬렉션 프레임워크(collection framework)란?
 
-```java
-// 배열 크기 할당 X, 초기화 X, 배열의 참조변수만 선언 (두가지는 동일한 의미, 아무거나 사용)
-int[] arr;
-int arr;
+자바에서 컬렉션 프레임워크란 다수의 데이터를 쉽고 효과적으로 처리할 수 있는 표준화된 방법을 제공하는 클래스의 집합을 의미한다.
 
-// 선언과 배열 크기할당 (초기화 X)
-int[] arr = new int[10]; // --> int형 배열의 default값은 0이다. (크기가 10이며 초기값이 0인 배열 생성됨)		
-String[] strArr = new String[10]; // --> 문자열 배열의 default값은 null이다. (크기가 10이며 초기값이 null인 배열 생성됨)		
+즉, 데이터를 저장하는 자료 구조와 데이터를 처리하는 알고리즘을 구조화 하여 클래스로 구현해 놓은 것입니다.
 
-// 배열의 선언, 크기설정 따로 지정
-int[] arr;
-arr = new int[10]; // 크기가 10이며 초기값이 0인 배열 생성됨
+또한, `데이터 삽입, 탐색, 정렬등 편리한 API를 제공`한다. 이러한 이점으로 배열보다 적절한 컬렉션을 선택해 사용하는 것을 권장한다.
 
-// 선언과 동시에 초기값 지정(배열의 크기도 설정됨)
-int[] arr = {1,2,3,4,5};
-int[] arr = new int[] {1,2,3,4,5}; // [] 을 잊지않도록 하자.
-String[] number = {"하나", "둘", "셋", "넷", "다섯"};
+컬렉션 프레임워크는 자바의 인터페이스를 사용하여 구현됩니다.
 
-// 동일한 방식으로 2차원 배열 선언이 가능하다.
-int[][] arr = new int[4][9]; // 4의 크기를 가진 배열을 9개 지닌 2차원 배열 선언 (마찬가지로 초기값은 0으로 설정됨)
-```
+#### 컬렉션 프레임워크의 장점
 
-<p><details>
-<summary style="color:red;">기본타입과 참조타입</summary><!-- summary 아래 한칸 공백 필요 -->
-
-> 기본 타입 : byte, char, short, int, long, float <br>
-> 참조 타입 : 배열, 열거, 클래스, 인터페이스 <br>
-> ==> 기본타입은 실제값을 변수에 저장하지만 참조타입은 메모리의 주소값을 변수 안에 저장한다.
-</details></p>
+- List, Set, Map, Queue 등의 인터페이스를 제공하고, 이를 구현하는 클래스를 제공하여 일관된 API를 사용할 수 있다.
+- `가변적인 저장 공간을 제공`한다. 고정적인 저장 공간을 제공하는 배열에 대비되는 특징이다.
+- 자료구조, 알고리즘을 구현하기 위한 코드를 직접 작성하지않고, 이미 구현된 컬렉션 클래스를 목적에 맞게 사용하면 된다.
 
 
-### 배열의 출력
+#### 프레임워크 vs 라이브러리 (간단한 차이점)
 
-배열은 참조변수 이므로 배열명을 기입하여 출력하려하면 주소값을 반환한다.
+프레임워크와 라이브러리의 차이점은 `제어 흐름`의 권한이 어디에 있는가에 있다.
 
-그렇기 때문에 다른 방식을 사용하여 배열을 출력해야한다.
+프레임워크의 경우에는 이미 만들어진 틀에서 동작하기 때문에 제어 흐름을 프레임워크가 가지고 있고 사용자는 그 안에서 필요한 코드를 작성하게됩니다.
 
-```java
-int[] arr = {1,2,3,4,5};
-// 1. 기본 for문 사용     
-for(int i = 0; i < arr.length; i++) {
-       System.out.println(arr[i]);
-}
-// 2. 향상된 for문 사용 ( 배열이 for문의 변수로 사용 )
-for(int number : arr) {
-       System.out.println(number);
-}
-// 3. Arrays 클래스의 toString() 메소드 사용
-System.out.println(Arrays.toString(arr));
+라이브러리는 애플리케이션 코드의 흐름을 사용자가 직접 제어해야 합니다.
 
-```
+더 자세한 내용은 이후에 포스팅하겠습니다.
 
-### 배열의 복사
+### 컬렉션 프레임워크 주요 인터페이스
 
-- 얕은 복사(Shallow Copy) : 복사된 배열이나 원본배열이 변경될 때 서로 간의 값이 같이 변경됩니다. (주소값을 복사/공유)
-- 깊은 복사(Deep Copy) : 복사된 배열이나 원본배열이 변경될 때 서로 간의 값이 바뀌지 않습니다. (주소에 저장된 요소를 저장)
+- List : 인덱스 순서로 요소를 저장한다. 중복 데이터를 저장할 수 있다.
+- Set : 순서가 없으며, 중복 데이터를 저장할 수 없다. 집합 연산을 제공한다.
+- Map : Key-value 쌍으로 데이터를 저장하며, Key는 중복 저장 불가능하다. 순서가 없다. (Python의 Dictionary와 유사)
+- Queue : 데이터가 저장된 순서대로 출력되는 선입선출(FIFO)의 구조를 갖는 선형 자료구조
 
-```java
-public class Array_Copy{
-    public static void main(String[] args)  {
-        int[] a = { 1, 2, 3, 4 };
-        int[] b = new int[a.length]; 
-        for (int i = 0; i < a.length; i++) {
-            b[i] = a[i];
-        }
-    }
-}
-// ==> for문을 사용하여 각 요소를 복사하고 있으므로 깊은 복사이다.
+List와 Set은 Collection 인터페이스를 상속받지만, 구조상의 차이로 Map 인터페이스는 별도로 정의됩니다.
 
-public class Array_Copy{
-    public static void main(String[] args)  {
-        int[] a = { 1, 2, 3, 4 };
-        int[] b = a;
-    }
-}
-// ==> a라는 변수명에는 주소값이 저장되어있는데 b는 a를 대입하게 되어 b에 a의 주소값이 저장된다. 그러므로 주소값을 공유하게 되고 이는 얕은 복사이다.
 
-```
 
-### 배열을 복사하는 여러가지 메서드
+#### List
 
-#### <1> Object.clone() : 가장 보편적으로 사용되며 쉽게 배열을 깊은 복사할 수 있다.
 
-```java
-public class Array_Copy{
-    public static void main(String[] args)  {
-        int[] a = { 1, 2, 3, 4 };
-        int[] b = a.clone();
-    }
-}
-```
 
-#### <2> Arrays.copyOf() : 배열의 시작점 ~ 원하는 length까지 배열의 깊은 복사를 할 수 있다. 
 
-```java
-import java.util.Arrays;
 
-public class Array_Copy{
-    public static void main(String[] args)  {
-        int[] a = { 1, 2, 3, 4 };
-        int[] b = Arrays.copyOf(a, a.length);
-    }
-}
-```
-
-#### <3> Arrays.copyOfRange() : 원하는시작점 ~ 원하는 length까지 깊은 복사를 할 수 있다. 
-
-```java
-import java.util.Arrays;
-
-public class Array_Copy{
-    public static void main(String[] args)  {
-        int[] a = { 1, 2, 3, 4 };
-        int[] b = Arrays.copyOfRange(a, 1, 3);
-    }
-}
-```
-
-#### <4> System.arraycopy() : 지정된 배열을 대상 배열의 지정된 위치에 복사합니다.
-
-```java
-public class Array_Copy{
-    public static void main(String[] args)  {
-        int[] a = { 1, 2, 3, 4 };
-        int[] b = new int[a.length];
-        System.arraycopy(a, 0, b, 0, a.length);
-    }
-}
-```
 
 
 
