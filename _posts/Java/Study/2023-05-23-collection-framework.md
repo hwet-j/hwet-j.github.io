@@ -131,6 +131,18 @@ Set은 인덱스로 값을 가져오는 메서드가 없고 반복자(Iterator)�
 | void clear()                        | 저장된 모든 Map.Entry를 삭제합니다.                |
 | V remove(Object Key)                | 주어진 키와 일치하는 Map.Entry를 삭제하고 값을 리턴합니다.                                         |
 
+***
+
+추가 내용 
+
+Set과 Map은 중복이 불가능한 데이터가 존재한다. 이 중복의 유무는 클래스 내에서 추가 작업 (put, add)을 명령내렸을 때,
+equals, ==, hashCode를 체크하여 중복을 방지한다.
+
+이 메서드들을 오버라이딩하여 수정해주면 다른 방식의 중복을 방지하도록 변경이 가능하다. 
+
+즉, Map의 key와 Set은 요소 추가시 자동으로 equals, hashCode의 비교를 진행한다.
+
+
 
 ***
 <br>
