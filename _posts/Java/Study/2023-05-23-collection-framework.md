@@ -68,21 +68,22 @@ List 컬렉션은 객체를 인덱스로 관리하기 때문에 저장하면 자
 
 인덱스 내에는 객체 자체를 저장하는 것이 아니라 객체의 번지를 참조한다. 이때, 동일한 객체를 중복 저장하게 되면 동일한 번지를 참조하는 것이다.
 
-List를 구현하는 대표적인 클래스에는 ArrayList, Vector, LinkedList 가 있다.
+대표적인 클래스에는 ArrayList, Vector, LinkedList이 있습니다.
 
 | 메서드                            | 기능                                           |
 |--------------------------------|----------------------------------------------|
 | boolean add(E e)               | 주어진 객체를 맨 끝에 추가합니다                           |
 | void add(int index, E element) | 주어진 인덱스에 객체를 추가합니다. 단, 빈 인덱스가 존재하지 않도록 해야한다. |
-| set(int index, E element)                          | 이미 저장된 인덱스의 객체를 주어진 객체로 바꿉니다.                |
-| boolean contains(Object o)                          | 주어진 객체가 있는지에 대한 여부를 검색합니다.                   |
-| E get(int index)                          | 주어진 인덱스에 저장된 객체를 리턴합니다                       |
-| isEmpty()                          | 컬렉션(리스트)이 비어있는지 여부를 확인합니다.                   |
-| int size()                          | 저장되어 있는 전체 객체 수를 리턴합니다.                      |
-| E remove(int index)                          | 주어진 인덱스에 저장된 객체를 삭제합니다. (해당 객체를 리턴한다.)       |
-| void clear()                          | 주어진 인덱스에 저장된 객체를 삭제합니다. (리턴값이 존재하지 않는다.)     |
-| boolean remove(Object o)                          | 주어진 객체를 삭제합니다.                                         |
+| set(int index, E element)      | 이미 저장된 인덱스의 객체를 주어진 객체로 바꿉니다.                |
+| boolean contains(Object o)     | 주어진 객체가 있는지에 대한 여부를 검색합니다.                   |
+| E get(int index)               | 주어진 인덱스에 저장된 객체를 리턴합니다                       |
+| isEmpty()                      | 컬렉션(리스트)이 비어있는지 여부를 확인합니다.                   |
+| int size()                     | 저장되어 있는 전체 객체 수를 리턴합니다.                      |
+| E remove(int index)            | 주어진 인덱스에 저장된 객체를 삭제합니다. (해당 객체를 리턴한다.)       |
+| void clear()                   | 주어진 인덱스에 저장된 객체를 삭제합니다. (리턴값이 존재하지 않는다.)     |
+| boolean remove(Object o)       | 주어진 객체를 삭제합니다.                                         |
 
+***
 
 #### Set
 
@@ -92,7 +93,43 @@ Set 컬렉션은 저장 순서를 유지하지 않으며 순서가 없으므로 
 
 Set은 인덱스로 값을 가져오는 메서드가 없고 반복자(Iterator)를 제공합니다.
 
+대표적인 클래스로 HashSet, TreeSet이 있습니다.
 
+
+| 메서드                        | 기능                                            |
+|----------------------------|-----------------------------------------------|
+| boolean add(E e)           | 주어진 객체를 저장 후 성공적이면 true를 중복 객체면 false를 리턴합니다. |
+| boolean contains(Object o) | 주어진 객체가 저장되어있는지 여부를 리턴합니다.                    |
+| Iterator<E> iterator()     | 저장된 객체를 한번씩 가져오는 반복자를 리턴합니다.                  |
+| isEmpty()                  | 컬렉션이 비어있는지 조사합니다.                             |
+| int Size()                 | 저장되어 있는 전체 객체수를 리턴합니다.                        |
+| void clear()               | 저장된 모든 객체를 삭제합니다.                             |
+| boolean remove(Object o)   | 주어진 객체를 삭제합니다. (리턴값 존재)                       |
+
+*** 
+
+#### Map
+
+키(key)와 값(value)로 구성된 객체를 저장하는 구조로 파이썬의 딕셔너리를 떠올리면 된다.
+
+키는 중복으로 저장될 수없으며, 중복된 key가 들어오면 key에 해당하는 기존값(value)은 사라지고 새로운 값(value)으로 덮어씌워진다.
+
+대표적인 클래스로 HashMap, Hashtable, TreeMap, LinkedHashMap이 있습니다.
+
+
+| 메서드                                 | 기능                                           |
+|-------------------------------------|----------------------------------------------|
+| V put(K Key, V value)               | 주어진 키와 값을 추가하여 저장되면 값을 리턴합니다.                          |
+| boolean containsKey(Object Key)     | 주어진 키가 있는지 확인합니다. |
+| boolean containsValue(Object value) | 주어진 값이 있는지 확인합니다.               |
+| Set<Map.Entry<K,V>> entrySet()      | 모든 Map.Entry 객체를 Set에 담아 리턴합니다.                   |
+| Set<K> keySet()                     | 모든 키를 Set객체에 담아서 리턴합니다.                      |
+| V get(Object key)                   | 주어진 키에 있는 값을 리턴합니다.                   |
+| boolean isEmpty()                   | 컬렉션이 비어있는지 조사합니다.                     |
+| int Size()                          | 저장되어 있는 전체 객체의 수를 리턴합니다.       |
+| Collection<V> values()              | 저장된 모든 값을 Collection에 담아서 리턴합니다.     |
+| void clear()                        | 저장된 모든 Map.Entry를 삭제합니다.                |
+| V remove(Object Key)                | 주어진 키와 일치하는 Map.Entry를 삭제하고 값을 리턴합니다.                                         |
 
 
 ***
