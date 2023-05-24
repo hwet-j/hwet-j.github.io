@@ -19,55 +19,25 @@ last_modified_at: 2023-05-20
 {: .notice--warning}
 
 
-## IntelliJ에서 Run이 존재하지 않아 실행할 수 없는 경우
+## JDK가 제공해주는 Source파일 확인
 
-Github에 Java로 작성된 Repository를 IntelliJ에 Clone 하였는데 .java 파일이 실행되지 않아 찾아본 정보입니다.
-
-IntelliJ의 Java 실행 문제를 검색하면 일반적으로 IntelliJ의 Run/Debug Configuration을 수정하여 해결한다. 
-
-이 방식은 다른 문제 해결 방식으로 이 문제를 해결하는 방법만 작성하도록 하겠습니다.
-
-### 문제 원인
-- Github에 Source Code를 공유하게 될 때 .gitignore을 통하여 IDE설정파일을 제외하고 공유한다.
-- Github에 저장된 Source Code만 내려 받게되면 이런 문제 때문에 실행되지 않는 경우가 발생한다.
+개발을 하다보면 JDK가 제공해주는 클래스 파일을 보고싶은 경우가 있는데 이 때 Class File Editor - Source not found 와 같이 뜨며 파일을 볼 수 없는 경우가 있습니다.
 
 ### 해결방법 
 
-> 자바 실행오류 - 아이콘부터 실행이 안될것처럼 생겼다.
+> 자바 클래스 소스파일의 경로가 없음
 
-  ![1 자바 실행오류](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/4ff4fcb5-44b6-487d-a610-296747afbdc1)
+  ![파일을 찾을수없음](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/c9d5e156-6703-4220-bf58-f029039fd7ff)
 
-> 실행되지 않는 파일,폴더,프로젝트에서 우클릭 -> Mark Directory as -> Source Root 클릭
+> Attach Source 클릭
 
-  ![2 자바 실행오류 해결방법](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/3c380c6a-38c2-4759-82b6-e0f015ce8a9b)
+  ![Attach Source](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/2dbc5231-efdf-4cf2-91ca-4fc2b40a2afd)
 
-> 아이콘이 바뀌어 C (Class의 약자)로 바뀐것을 확인가능하다.
+> External File 클릭 -> 경로지정 (각자 설치한 경로의 src.zip파일)
 
-  ![3 자바 실행오류 해결후](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/de4e8ce3-595f-4755-b3d8-2a09cb0b0720)
+  ![External File](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/c4406cd5-11ea-46a6-9ae9-ff0cb64cfb67)
 
-> 끝! 일수도 있지만 JDK를 설정하지 않아 문제가 발생할 수도 있다.
 
-> IntelliJ를 설치하자마자 Git과 연동하면서 문제가 발생한것으로 기존 Java를 사용하던 사람은 오류가 발생하지 않았을것이다.
-
-  ![4 자바 JDK 설정이전](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/7ff16c87-0b87-442f-b429-83aa801b3609)
-
-> 도구창 File -> Project Structure 클릭 (Ctrl + Alt + Shift + S 단축키 사용가능)
-
-  ![5 프로젝트 구조 설정](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/65ccc9b4-ba65-448e-a29b-9ee7fc2bd4e4)
-
-> 좌측에 Project Setting에서 project 클릭 -> SDK 설정 -> IntelliJ에 기본으로 깔려있는 JDK를 사용 하겠다. 
-
-  ![6 JDK 설정](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/18a19186-881c-4ad7-bdb4-67e3b62d4863)
-
-> 같은 창에서 Language Level 설정을 해줘야하는데 설정한 JDK에 맞게 설정해야하며 저는 SDK default, 8이 가능했습니다.
-
-  ![7  JDK Level설정-1](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/891e387b-c35e-4d9d-ad5b-3a89042b9bed)
-
-  ![7  JDK Level설정-2](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/33fa89f6-536b-4988-b069-0b52f2a3cc9f)
-
-이제 인텔리제이에서 Java가 정상적으로 작동합니다.
-
-> 요약 : 문제가 발생한 프로젝트, 폴더, 파일을 우클릭 -> Mark Directory As -> Source Root 지정 
 
 
 
