@@ -1,11 +1,11 @@
 ---
-title:  "[IDE] IntelliJ에서 Java 프로그램 실행"
-excerpt: "Java 실행오류 해결"
+title:  "[IDE] Eclipse - Source not found"
+excerpt: "Java 클래스파일 확인 오류"
 
 categories:
   - IDE
 tags:
-  - [Java, IntelliJ]
+  - [Java, Eclipse]
 
 toc: true
 toc_sticky: true
@@ -15,8 +15,7 @@ last_modified_at: 2023-05-20
 ---
 
 인터넷에서 검색하여 여러가지를 참고하여 정리하였습니다.    
-[참고1](https://nesoy.github.io/articles/2018-05/Intellij-Cannot-Run-Main)
-[참고2](https://stackoverflow.com/questions/30923909/unable-to-run-java-code-with-intellij-idea)
+[참고1](https://treasurebear.tistory.com/42)
 {: .notice--warning}
 
 
