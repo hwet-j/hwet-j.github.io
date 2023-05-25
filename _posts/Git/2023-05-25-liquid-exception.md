@@ -28,7 +28,7 @@ last_modified_at: 2023-05-25
 
 ### 에러 원인
 
-Jekyll에서 사용되는 liquid는 {% raw %}{{{% endraw %}와 {% raw %}}}{% endraw %} 를 escape 문자로 사용하기 때문에 발생하는 문제이다. 
+Jekyll에서 사용되는 liquid는 `{%raw%}{{ }}{%endraw%}`, `{%raw%}{% %}{%endraw%}`를 escape 문자로 사용하기 때문에 발생하는 문제이다. 
 
 ### 해결 방법
 
@@ -36,9 +36,7 @@ Jekyll에서 사용되는 liquid는 {% raw %}{{{% endraw %}와 {% raw %}}}{% end
 
 {% raw %}{{{% endraw %} 를 { {로 바꿔주면 된다. 즉, 중괄호와 중괄호 사이에 공백(space)를 넣어주면 된다.
 
-```markdown
-다른 방법으로는  {% raw %}와 {% endraw %}로 감싸주면 된다.
-```
+다른 방법으로는  {{"{{ raw"}} }} , {{"{% endraw"}} %}로 감싸주면 된다.
 
 ***
 <br>
