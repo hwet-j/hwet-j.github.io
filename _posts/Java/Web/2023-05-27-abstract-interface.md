@@ -3,9 +3,9 @@ title:  "[Java/Web] 이클립스 Java Web 환경 구축"
 excerpt: "두개는 어떻게 다르며 어떻게 구분하는가?"
 
 categories: # 분류하고싶은 카테고리 입력
-  - JavaWeb
+  - Web
 tags:     # 중요 키워드
-  - [IDE, Web]
+  - [IDE, Java]
 
 toc: true
 toc_sticky: true
