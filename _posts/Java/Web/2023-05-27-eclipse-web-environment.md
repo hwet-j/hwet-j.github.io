@@ -46,27 +46,29 @@ last_modified_at: 2023-05-27
 
 우선, 지금은 웹페이지를 구현할수있게 해주는 웹 어플리케이션 서버이라고 생각하고 넘어가겠다. 
 
+*** 
+
 ### 이클립스와 아파치톰캣 연동
 
-1. Java EE(모드)에서 Create a Dynamic Web project 클릭 또는 File -> New -> Dynamic Web project 클릭 
+- `Java EE(모드)에서 Create a Dynamic Web project 클릭 또는 File -> New -> Dynamic Web project 클릭` 
 
 ![img](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/51c7d2b1-9f4f-455e-976d-45e2be36abad)
 
-2. Target runtime -> New Runtime.. -> 설치한 Tomcat 버전으로 설정 -> Next -> 톰캣 경로와 JRE 설정
+- `Target runtime -> New Runtime.. -> 설치한 Tomcat 버전으로 설정 -> Next -> 톰캣 경로와 JRE 설정`
 
 톰캣의 경로는 자신이 설치한 톰캣 경로 (C:\Program Files\Apache Software Foundation\Tomcat 9.0)로 설정해준다.
 
 ![RuntimeSet](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/1f32b0c3-8ed4-4772-9bf8-e519a09a970e)
 
-3. 프로젝트 생성을 완료하고, WebContent에 .jsp파일 또는 .html 파일을 생성해준다.(내 파일이 작동되는것인지 글 문구 하나 작성하여 테스트)
+- `프로젝트 생성을 완료하고, WebContent에 .jsp파일 또는 .html 파일을 생성해준다.(내 파일이 작동되는것인지 글 문구 하나 작성하여 테스트)`
 
 ![파일생성](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/5f8d1e94-0b3f-4fc4-83f8-236448692881)
 
-4. 프로젝트 폴더에서 우클릭 -> Run As -> Run on Server
+- `프로젝트 폴더에서 우클릭 -> Run As -> Run on Server`
 
 ![서버실행](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/e54ad47f-45bd-45de-bd75-7d80cff2b56f)
 
-5. 이러면 작동이 될것이다. 만약 작동되지 않고 Could not launch external web browser.... 에러가 발생할 수 있다.
+- `이러면 작동이 될것이다. 만약 작동되지 않고 Could not launch external web browser.... 에러가 발생할 수 있다.`
 
 웹 브라우저 경로 문제로 windows -> preferences -> General -> Web Browser 로 들어간다.
 
