@@ -12,7 +12,7 @@
                   <ul>
                       {% for category in site.categories %}
                           {% if category[0] == "Java" %}
-                              <li><a href="/categories/java-study" class="">용어 정리 ({{category[1].size}})</a></li>
+                              <li><a href="/categories/java-study" class="">자바 기본({{category[1].size}})</a></li>
                           {% endif %}
                       {% endfor %}
                   </ul>
@@ -71,7 +71,7 @@
             </ul>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "IDE" %}
+                    {% if category[0] == "FFD" %}
                         <li><a href="/categories/ide" class="">깜지({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
