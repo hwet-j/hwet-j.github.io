@@ -1,5 +1,5 @@
 ---
-title:  "[Web] 이클립스 Java Web 환경 구축"  
+title:  "[Web/IDE] 이클립스 Java Web 환경 구축"  
 excerpt: "초기 구축방법"
 
 categories: # 분류하고싶은 카테고리 입력

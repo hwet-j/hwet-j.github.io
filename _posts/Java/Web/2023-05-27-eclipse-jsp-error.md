@@ -1,5 +1,5 @@
 ---
-title:  "[Web] 이클립스 JSP파일 에러 해결"  
+title:  "[Web/IDE] 이클립스 JSP파일 에러 해결"  
 excerpt: "javax.servlet 에러"
 
 categories: # 분류하고싶은 카테고리 입력
