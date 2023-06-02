@@ -80,17 +80,16 @@ SIZE 초기용량
 > TABLESPACE 삭제
 
 ```sql
-
 DROP TABLESPACE myts  
 including contents AND datafiles;
-
 ```
 
 #### 3. 계정 생성
 
+- 계정명에 비밀번호를 설정하여 생성
+
 ```sql
-
-
+CREATE USER 계정명 IDENTIFIED BY 비밀번호;
 ```
 
 
