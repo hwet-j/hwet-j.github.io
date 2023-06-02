@@ -86,14 +86,23 @@ including contents AND datafiles;
 
 #### 3. 계정 생성
 
-- 계정명에 비밀번호를 설정하여 생성
+##### 계정 생성
 
 ```sql
 CREATE USER 계정명 IDENTIFIED BY 비밀번호;
 ```
 
+##### 권한 부여
+
+오라클 시스템 권한은 시스템 권한, Role 두가지 종류로 나뉜다.
+
+create table, create view, select any table, create user....
 
 
+
+```sql
+GRANT connect, resource, dba TO 계정명;
+```
 
 
 
