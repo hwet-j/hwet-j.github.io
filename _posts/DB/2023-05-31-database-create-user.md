@@ -17,6 +17,8 @@ last_modified_at: 2023-06-03
 
 인터넷에서 검색하여 여러가지를 참고하여 정리하였습니다.    
 [참고1](https://myjamong.tistory.com/218)
+[참고2](https://aileen93.tistory.com/17)
+[참고3](https://velog.io/@krafftdj/Oracle-%EA%B3%84%EC%A0%95-%EC%83%9D%EC%84%B1-%EA%B6%8C%ED%95%9C-%EB%B6%80%EC%97%AC)
 {: .notice--warning}
 
 
