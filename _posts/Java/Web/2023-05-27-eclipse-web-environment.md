@@ -3,7 +3,7 @@ title:  "[IDE/Web] 이클립스 Java Web 환경 구축"
 excerpt: "초기 구축방법"
 
 categories: # 분류하고싶은 카테고리 입력
-  - Web
+  - IDE
 tags:     # 중요 키워드
   - [IDE, Java, Web]
 
