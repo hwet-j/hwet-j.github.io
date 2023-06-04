@@ -1,11 +1,11 @@
 ---
-title:  "[Web/IDE] 이클립스 JSP파일 에러 해결"  
+title:  "[IDE/Web] 이클립스 JSP파일 에러 해결"  
 excerpt: "javax.servlet 에러"
 
 categories: # 분류하고싶은 카테고리 입력
-  - Web
+  - IDE
 tags:     # 중요 키워드
-  - [IDE, Java]
+  - [IDE, Java, Web]
 
 toc: true
 toc_sticky: true

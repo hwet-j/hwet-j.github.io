@@ -8,21 +8,44 @@
             📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">{{sum}}</style> <span style="font-family:'Cafe24Oneprettynight';">개</style>
       </li>
       <li>
-        <span class="nav__sub-title">Java</span>
+        <span class="nav__sub-title">Programming</span>
                   <ul>
                       {% for category in site.categories %}
                           {% if category[0] == "Java" %}
-                              <li><a href="/categories/java-study" class="">자바 기본({{category[1].size}})</a></li>
+                              <li><a href="/categories/java-study" class="">Java({{category[1].size}})</a></li>
                           {% endif %}
                       {% endfor %}
                   </ul>
-                  <ul>
-                      {% for category in site.categories %}
-                          {% if category[0] == "Web" %}
-                              <li><a href="/categories/java-web" class="">Spring/Web({{category[1].size}})</a></li>
-                          {% endif %}
-                      {% endfor %}
-                  </ul>
+        <span class="nav__sub-title">MarkUp</span>
+                          <ul>
+                              {% for category in site.categories %}
+                                  {% if category[0] == "HTML" %}
+                                      <li><a href="/categories/java-study" class="">HTML({{category[1].size}})</a></li>
+                                  {% endif %}
+                              {% endfor %}
+                          </ul>
+                           <ul>
+                              {% for category in site.categories %}
+                                  {% if category[0] == "Web" %}
+                                      <li><a href="/categories/java-web" class="">Web({{category[1].size}})</a></li>
+                                  {% endif %}
+                              {% endfor %}
+                          </ul>
+        <span class="nav__sub-title">Framework</span>
+                          <ul>
+                              {% for category in site.categories %}
+                                  {% if category[0] == "Spring" %}
+                                      <li><a href="/categories/java-study" class="">Spring({{category[1].size}})</a></li>
+                                  {% endif %}
+                              {% endfor %}
+                          </ul>
+                          <ul>
+                              {% for category in site.categories %}
+                                  {% if category[0] == "Django" %}
+                                      <li><a href="/categories/java-web" class="">Django({{category[1].size}})</a></li>
+                                  {% endif %}
+                              {% endfor %}
+                          </ul>
         <span class="nav__sub-title">Coding Test</span>
             <ul>
                 {% for category in site.categories %}
