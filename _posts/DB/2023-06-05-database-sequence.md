@@ -1,6 +1,6 @@
 ---
-title:  "[DB] OracleDB 기본문법(DML)"  
-excerpt: "CRUD"
+title:  "[DB] OracleDB Sequence"  
+excerpt: "테이블스페이스 생성, 사용자생성...."
 
 categories: # 분류하고싶은 카테고리 입력
   - DATABASE
