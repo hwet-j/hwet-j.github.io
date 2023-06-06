@@ -38,7 +38,7 @@ FROM 테이블명
 [WHERE 조건]
 [GROUP BY 그룹으로묶을컬럼명]
 [HAVING 묶은 그룹 조건]
-[ORDER BAY 컬럼명 [ACS | DESC]; 
+[ORDER BY 컬럼명 [ASC | DESC]; 
 ```
 
 > SELECT문 키워드
