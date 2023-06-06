@@ -38,7 +38,7 @@ FROM 테이블명
 [WHERE 조건]
 [GROUP BY 그룹으로묶을컬럼명]
 [HAVING 묶은 그룹 조건]
-[ORDER BAY 컬럼명 [ACS | DESC]; 
+[ORDER BY 컬럼명 [ASC | DESC]; 
 ```
 
 > SELECT문 키워드
@@ -96,7 +96,7 @@ UPDATE문에서는 매우 높은 확률로 WHERE절이 작성된다. 조건없�
 > DELETE 문법
 
 ```sql 
-DETELE [FROM] 테이블명
+DELETE [FROM] 테이블명
 [WHERE 조건];
 ```
 
