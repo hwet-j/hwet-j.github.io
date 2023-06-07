@@ -89,7 +89,7 @@ CREATE TABLE table_name (
 
 table_name 테이블의 id 컬럼의 값은 name_seq.NEXTVAL을 기본값으로 설정하였기 때문에 데이터를 Insert할 때 마다 자동으로 값이 할당된다.
 
-> UPDATE 문법
+> INSERT 예시
 
 ```sql 
 INSERT INTO employees (name, age) VALUES ('이름', 30);
