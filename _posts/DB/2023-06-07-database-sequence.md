@@ -3,7 +3,7 @@ title:  "[DB] OracleDB Sequence"
 excerpt: "시퀀스란 무엇이며 언제쓰이나"
 
 categories: # 분류하고싶은 카테고리 입력
-  - DATABASE
+  - ORACLEDB
 tags:     # 중요 키워드
   - [OracleDB]
 

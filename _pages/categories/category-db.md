@@ -1,7 +1,7 @@
 ---
 title: "MySQL"
 layout: archive
-permalink: categories/db
+permalink: categories/oradb
 author_profile: true
 sidebar_main: true
 ---
@@ -10,5 +10,5 @@ sidebar_main: true
 
 ***
 
-{% assign posts = site.categories.DB %}
+{% assign posts = site.categories.ORACLEDB %}
 {% for post in posts %} {% include archive-single2.html type=page.entries_layout %} {% endfor %}
