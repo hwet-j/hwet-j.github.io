@@ -1,7 +1,7 @@
 ---
 title: "MySQL"
 layout: archive
-permalink: categories/oradb
+permalink: categories/ora_db
 author_profile: true
 sidebar_main: true
 ---
