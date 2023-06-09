@@ -1,11 +1,11 @@
 ---
-title:  "[DB] OracleDB 여러 함수"  
-excerpt: "함수로 DB 다루기"
+title:  "[DB] OracleDB 숫자관련 함수"  
+excerpt: "COUNT, MAX, AVG, ROUND, TRUNC 숫자관련 함수다루기"
 
 categories: # 분류하고싶은 카테고리 입력
   - ORACLEDB
 tags:     # 중요 키워드
-  - [OracleDB]
+  - [OracleDB, TRUNC]
 
 toc: true
 toc_sticky: true
@@ -16,7 +16,7 @@ last_modified_at: 2023-06-09
 
 
 인터넷에서 검색하여 여러가지를 참고하여 정리하였습니다.    
-[참고1]()
+[참고1](https://kkkapuq.tistory.com/106)
 {: .notice--warning}
 
 
@@ -177,13 +177,6 @@ FROM DUAL;
 > 월일초기화 = 2023-01-01  
 > 일초기화 = 2023-06-01  
 > 요일초기화 = 2023-06-04  
-
-
-
-
-
-
-## 집합 함수
 
 
 
