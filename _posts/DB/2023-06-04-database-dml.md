@@ -10,8 +10,8 @@ tags:     # 중요 키워드
 toc: true
 toc_sticky: true
 
-date: 2023-05-31
-last_modified_at: 2023-06-03
+date: 2023-06-04
+last_modified_at: 2023-06-09
 ---
 
 
@@ -63,6 +63,11 @@ FROM - WHERE - GROUP BY - HAVING - SELECT - ORDER BY 순으로 실행된다.
 SELECT절이 WHERE절보다 더 늦은 순서로 `SELECT column1 AS C1 FROM table1 WHERE C1 = 10`과 같은 명령어는 에러가 발생한다.
 
 `SELECT column1 AS C1 FROM table1 WHERE column1 = 10`와 같이 사용해야 하며, WHERE절에는 SELECT에서 적용된 상태를 가져다 사용불가능하다.
+
+<strong style="color:red">! ORDER BY 정렬기준에 null이 존재할 경우</strong>
+
+ORACLE DB에서는 null값을 가장 큰 값으로 인식하여 정렬시에 가장 위(내림차순 시에)에 존재한다.
+
 
 ### INSERT (입력)
 
