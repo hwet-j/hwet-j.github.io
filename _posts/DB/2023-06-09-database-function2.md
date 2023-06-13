@@ -1,6 +1,6 @@
 ---
 title:  "[DB] OracleDB 문자관련 함수"  
-excerpt: "SUBSTR, INSTR...문자관련 함수다루기"
+excerpt: "SUBSTR, INSTR, TO_CHAR 문자관련 함수다루기"
 
 categories: # 분류하고싶은 카테고리 입력
   - ORACLEDB
@@ -11,7 +11,7 @@ toc: true
 toc_sticky: true
 
 date: 2023-06-09
-last_modified_at: 2023-06-13
+last_modified_at: 2023-06-14
 ---
 
 
