@@ -16,7 +16,7 @@ last_modified_at: 2023-06-13
 
 
 인터넷에서 검색하여 여러가지를 참고하여 정리하였습니다.    
-[참고1]()
+[참고1](https://product.kyobobook.co.kr/detail/S000001032057)
 {: .notice--warning}
 
 
