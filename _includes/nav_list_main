@@ -97,6 +97,7 @@
                 {% endfor %}
             </ul>
 
+        <!--
         <span class="nav__sub-title">Workout</span>
             <ul>
                 {% for category in site.categories %}
@@ -105,6 +106,8 @@
                     {% endif %}
                 {% endfor %}
             </ul>
+            -->
+
         <span class="nav__sub-title">잡다</span>
             <ul>
                 {% for category in site.categories %}
