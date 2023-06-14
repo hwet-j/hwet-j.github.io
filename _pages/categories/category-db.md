@@ -1,5 +1,5 @@
 ---
-title: "MySQL"
+title: "ORACLE"
 layout: archive
 permalink: categories/ora_db
 author_profile: true
