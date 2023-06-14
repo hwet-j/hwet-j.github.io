@@ -11,7 +11,7 @@ toc: true
 toc_sticky: true
 
 date: 2023-06-07
-last_modified_at: 2023-06-07
+last_modified_at: 2023-06-14
 ---
 
 
@@ -81,18 +81,18 @@ CACHE 20;
 
 ```sql
 CREATE TABLE table_name (
-  id NUMBER DEFAULT name_seq.NEXTVAL,
+  id NUMBER,
   name VARCHAR2(100),
   age NUMBER
 );
 ```
 
-table_name 테이블의 id 컬럼의 값은 name_seq.NEXTVAL을 기본값으로 설정하였기 때문에 데이터를 Insert할 때 마다 자동으로 값이 할당된다.
+테스트를 위해 간단한 테이블을 생성
 
 > INSERT 예시
 
 ```sql 
-INSERT INTO employees (name, age) VALUES ('이름', 30);
+INSERT INTO employees (id, name, age) VALUES (name_seq.NEXTVAL, '이름', 30);
 ```
 
 위와 같이 입력해주면 id값은 설정해주지 않았음에도 자동으로 설정된다.
