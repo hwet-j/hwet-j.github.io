@@ -28,6 +28,7 @@ last_modified_at: 2023-06-16
 문자열의 경우에는 toUpperCase(), toLowerCase()를 사용하여 쉽게 변경가능하다.
 
 > 사용 예시
+
 ```java
 String str = "asndFaDAna";
 
@@ -37,7 +38,13 @@ System.out.println(str.toUpperCase()); // -> ASNDFADANA
 
 ### 특수문자 출력하기
 
-자바에서 사용되는 이스케이프 문자는 / 이다.
+##### 1. 이스케이프 문자를 사용하여 특수문자 출력
+
+- 개행 (줄바꿈): \n
+- 탭: \t
+- 작은따옴표: '
+- 큰따옴표: "
+- 백슬래시 자체: \
 
 
 
