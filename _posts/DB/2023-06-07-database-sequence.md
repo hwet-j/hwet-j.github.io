@@ -75,28 +75,11 @@ CACHE 20;
 
 무조건은 아니지만 일반적으로 시퀀스명은 앞이나 뒤에 seq를 붙여 시퀀스임을 명시해준다. 
 
-### 🔹 Sequence의 사용
-
-> Sequence 사용 예시
-
-```sql
-CREATE TABLE table_name (
-  id NUMBER,
-  name VARCHAR2(100),
-  age NUMBER
-);
-```
-
-테스트를 위해 간단한 테이블을 생성
-
-> INSERT 예시
+### 🔹 Sequence 삭제
 
 ```sql 
-INSERT INTO employees (id, name, age) VALUES (name_seq.NEXTVAL, '이름', 30);
+DROP SEQUENCE sequence_name;
 ```
-
-위와 같이 입력해주면 id값은 설정해주지 않았음에도 자동으로 설정된다.
-
 
 ### 🔹 Sequence 수정
 
@@ -109,14 +92,78 @@ ALTER SEQUENCE sequence_name
 [CACHE n | NOCACHE];
 ```
 
-> 시작번호를 수정하고 싶다면 해당 시퀀스를 삭제했다가 만드는 방법을 사용해야 한다. 
+> 시작번호를 수정하고 싶다면 해당 시퀀스를 삭제했다가 만드는 방법을 사용해야 한다.
 
 
-### 🔹 Sequence 삭제
+### 🔹 Sequence의 사용
+
+> Sequence 사용 예시
+
+#### 생성된 테이블에서 INSERT문에 사용하기 
+
+```sql
+CREATE TABLE table_name (
+  id NUMBER,
+  name VARCHAR2(100),
+  age NUMBER
+);
+```
+
+id, name ,age의 컬럼을 가진 테이블을 생성
+
+> INSERT 문에서 시퀀스 사용
 
 ```sql 
-DROP SEQUENCE sequence_name;
+INSERT INTO employees (id, name, age) VALUES (name_seq.NEXTVAL, '이름', 30);
 ```
+
+위와 같이 입력해주면 id값은 설정해주지 않았음에도 자동으로 설정된다.
+
+여기서, id 값과 같이 입력시마다 일정한 규칙으로 증가하는 컬럼이 있는데 INSERT문을 작성할 때마다 굳이 작성해줘야 할까?
+
+`INSERT INTO employees (name, age) VALUES ('이름', 30)` 와 같이 INSERT문에서 명시하지 않아도 자동으로 입력되도록 할 수 있는 방법을 찾아보았다.
+
+> 테이블생성시 DEFAULT값으로 설정이 가능할까? 
+
+```sql
+CREATE TABLE table_name (
+  id NUMBER DEFAULT name_seq.NEXTVAL,
+  name VARCHAR2(100),
+  age NUMBER
+);
+```
+
+과 같이 설정해 보았다. 하지만 `ORA-00984: column not allowed here` 에러가 발생하였다.
+
+오라클 데이터베이스에서는 시퀀스의 NEXTVAL 값을 테이블 생성 시 DEFAULT 값으로 할당이 불가능하다.
+
+이 문제를 해결할 대안은 PL/SQL을 활용하는 방법이 있다. 
+
+PL/SQL의 트리거(Trigger)를 사용해서 시퀀스의 NEXTVAL 값을 INSERT문 실행시 자동으로 할당할 수 있다.
+
+```sql 
+CREATE OR REPLACE TRIGGER trigger_name
+BEFORE INSERT ON table_name
+FOR EACH ROW
+BEGIN
+    :NEW.id := name_seq.NEXTVAL;
+END;
+/
+```
+
+위의 코드는 BEFORE INSERT 트리거를 정의하여 INSERT문이 실행되기 전에 트리거가 작동되도록 설정하는 것입니다. 
+
+트리거 내에서 NEW.id에 name_seq.NEXTVAL 값을 할당하여 자동으로 시퀀스 값이 할당되는 것입니다.
+
+이 트리거로 인해서 INSERT문을 사용하여 데이터를 삽입할 때, id 컬럼에 값을 명시하지 않아도 트리거가 작동하여 값이 할당됩니다.
+
+```sql 
+INSERT INTO employees (name, age) VALUES ('이름2', 40)
+``` 
+ 
+의 코드로 id값을 입력하지 않아도 정상적으로 입력됩니다.
+
+
 
 
 
