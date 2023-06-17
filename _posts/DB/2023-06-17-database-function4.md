@@ -135,20 +135,45 @@ SELECT NVL2(comm, '보너스 있음', '보너스 없음') FROM emp;
 
 NULLIF는 두 개의 인자를 필요로 하며, 두 인자값을 비교하여 동일한 경우 NULL을 반환하고, 다른경우에는 첫 번째 인자를 반환합니다. 
 
+```sql 
+-- comm 컬럼의 값이 0이면 null 값으로 대체
+SELECT NULLIF(comm, 0)
+FROM emp;
+```
 
+#### 👉 COALESCE
+
+COALESCE는 인자를 최소 두 개만 작성해주면 되며 최대 인자수는 따로 존재하지 않는것 같다.
+
+인자를 작성한 순서대로 데이터를 확인하며 데이터가 NULL인지 확인하며, NULL이 아닌 값이 나오면 값을 반환하고 다음 record 출력으로 넘어간다.  
+
+```sql 
+-- emp 테이블에서 comm , mgr중에서 NULL이 아닌 첫 번째 값을 반환
+SELECT COALESCE(comm , mgr) FROM emp;
+```
+
+❗ 여기서도 나열되는 타입이 동일하게 설정하여 하나의 컬럼에서 나오는 데이터가 하나의 데이터 타입으로 출력가능 하도록 설정해야 한다. 
+
+```sql 
+-- emp 테이블에서 comm , mgr, job중에서 NULL이 아닌 첫 번째 값을 반환
+SELECT COALESCE(comm , mgr, job) FROM emp;
+```  
+
+위의 쿼리문은 실행할 수 없는 쿼리문이다. 
+
+comm, mgr은 숫자(NUMBER) 타입이지만, job의 경우에는 문자(VARCHAR2)타입이기 때문에 데이터 타입이 맞지 않기 때문이다. 
+
+### 조건에 따라 값 변환하기
+
+NULL을 다루면서 NULL 값인가 아닌가에 따라 값을 변환하는 함수를 몇가지 다뤘는데, NULL 이외에 다른 조건에 따라 값을 변환하는 함수를 알아보자.
+
+#### 👉 DECODE
 
 
 
 
 
 ***
-
-
-
-
-
-
-
 
 
 
