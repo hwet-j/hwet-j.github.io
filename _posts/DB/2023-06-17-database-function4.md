@@ -169,14 +169,90 @@ NULL을 다루면서 NULL 값인가 아닌가에 따라 값을 변환하는 함�
 
 #### 👉 DECODE
 
+DECODE의 기본적인 문법 형태는 `DECODE(expression, value1, result1, value2, result2, ..., default_result)` 의 형태이다.
 
+DECODE는 가장 첫 인자에 표현식(expression)과 value가 동일하면, 해당 value에 맞는 result 값을 반환한다. 
 
+DECODE의 경우에는 코드를 좀 더 이해하기 쉽도록 scott 계정에 존재하지 않는 데이터로 예를 들겠습니다.
+
+```sql 
+-- students 테이블에서 score 컬럼을 기반으로 성적 등급 변환
+SELECT student_name, DECODE(score,
+                           90, 'A',
+                           80, 'B',
+                           70, 'C',
+                           'D') AS grade
+FROM students;
+```
+
+학생의 점수에 따라 학생의 등급을 나눠 등급을 출력하도록 하는 쿼리문입니다.
+
+하지만 DECODE의 경우에는 특정 값을 기준으로 조건을 설정하여 결과를 반환하기 때문에 조건식을 사용하여 결과를 반환할 수 없습니다.
+
+위의 쿼리문을 가지고 설명을 하면 90점일 때 A, 80점일 떄 B, 70점 일때 C, 이외는 D 로 등급을 나누는데 조건(value)로 설정된 값과 동일해야지만 그에 대응하는 결과 값을 반환한다.
+
+만약 85점, 71점 과 같은 데이터가 존재하면 B, C 등급이 아닌 이외의 데이터(default_result)인 D등급이 되어버린다. 
+
+만약 조건식을 활욯아여 값을 조건에 따라 바꾸고 싶다면, CASE 문을 사용하면된다.
+
+#### 👉 CASE
+
+CASE문은 WHEN, THEN , ELSE , END와 함께 사용된다. 일반적인 IF, ELSE IF 문으로 생각하면 이해가 쉬울거 같다. 
+
+WHEN 뒤에 논리식이나 비교식의 표현이 가능하고 THEN은 조건이 참인 경우에 해당하는 결과를 반환하는 값이다. ELSE는 생략가능하고 CASE문의 마지막에 END를 명시해준다.
+
+> 기본형 (조건식) 
+
+```sql 
+CASE
+    WHEN condition1 THEN result1
+    WHEN condition2 THEN result2
+    ...
+    ELSE result
+END
+```
+
+condition 위치에 조건식이 작성하고, result위치에 반환값을 작성한다. ELSE는 어떤 조건도 만족하지 않으면 반환할 값이다.
+
+CASE문은 DECADE문과 의미가 완전히 동일하게 작성가능한데, CASE문 뒤에 표현식을 작성하면 WHEN 절에는 조건식이 아닌 특정값이 들어간다.
+
+```sql 
+CASE expression
+    WHEN value1 THEN result1
+    WHEN value2 THEN result2
+    ...
+    ELSE result
+END
+```
+
+> CASE문 예시  
+
+```sql 
+-- 1. students 테이블에서 조건식에 따라 등급을 반환 
+SELECT student_name,
+       CASE
+           WHEN score >= 90 THEN 'A'
+           WHEN score >= 80 THEN 'B'
+           WHEN score >= 70 THEN 'C'
+           ELSE 'D'
+       END AS grade
+FROM students;
+
+-- 2. DECADE문에서 작성한 데이터와 동일한 의미를 가진 CASE 문
+SELECT student_name,
+       CASE score
+           WHEN 90 THEN 'A'
+           WHEN 80 THEN 'B'
+           WHEN 70 THEN 'C'
+           ELSE 'D'
+       END AS grade
+FROM students;
+```
+
+예시의 1번 쿼리문의 경우에는 하나의 표현식(컬럼)을 사용하지않고 여러개의 다양한 데이터에서 식을 설정해도 상관은 없다.
 
 
 ***
-
-
-
 
 ***
 <br>
