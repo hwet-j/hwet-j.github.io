@@ -11,7 +11,7 @@ toc: true
 toc_sticky: true
 
 date: 2023-05-31
-last_modified_at: 2023-06-03
+last_modified_at: 2023-06-17
 ---
 
 
@@ -86,7 +86,7 @@ SHOW USER
 CREATE USER 계정명 IDENTIFIED BY 비밀번호;
 
 -- 계정 비밀번호 변경
-ALTER USER 계정명 INDENTIFIED BY 비밀번호;
+ALTER USER 계정명 IDENTIFIED BY 비밀번호;
 ```
 
 > 예제
@@ -96,7 +96,7 @@ ALTER USER 계정명 INDENTIFIED BY 비밀번호;
 CREATE USER ora_user IDENTIFIED BY 1234;
 
 -- ora_user 비밀번호 hong으로변경
-ALTER USER ora_user INDENTIFIED BY hong;
+ALTER USER ora_user IDENTIFIED BY hong;
 ```
 
 #### 권한 부여
