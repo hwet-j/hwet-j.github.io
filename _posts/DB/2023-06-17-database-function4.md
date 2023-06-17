@@ -30,33 +30,116 @@ last_modified_at: 2023-06-17
 
 데이터를 다루다보면 명시적으로 또는 암시적으로 NULL 데이터가 들어가 있는 경우가 있는데 이 NULL을 다룰줄 알아야 원하는 대로 데이터를 다룰 수 있다.
 
-#### IS NULL / IS NOT NULL : 데이터가 NULL인가, 아닌가를 판별하는 명령어이다.
+#### 👉 IS NULL / IS NOT NULL
 
-IS NULL을 WHERE 절에 사용하여서 NULL 값인 데이터만 사용한다거나 IS NOT NULL 을 사용하여 NULL 값이 아닌 데이터만 사용할 수 있다.
+IS NULL은 데이터가 NULL 인가 확인하는 명령어
+
+IS NOT NULL은 데이터가 NULL이 아닌가 확인하는 명령어 이다.
+
+> IS NULL
 
 ```sql 
--- IS NULL
+-- emp 테이블에서 comm 컬럼의 값이 NULL인 경우만 출력
 SELECT *
 FROM emp
 WHERE comm IS NULL;
 ```
 
-> 결과
+`결과`
+
+COMM 컬럼의 값이 NULL 데이터만 추출된 것을 확인할 수 있다.
 
 ![image](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/5955a258-5cbb-45fa-9093-9c1bd6797443)
 
+> IS NOT NULL
+
 ```sql 
--- IS NOT NULL
+-- emp 테이블에서 comm 컬럼의 값이 NULL이 아닌 경우만 출력
 SELECT *
 FROM emp
 WHERE comm IS NOT NULL;
 ```
 
-> 결과
+`결과`
+
+COMM 컬럼의 값이 NULL이 아닌 데이터만 추출된 것을 확인할 수 있다.
 
 ![image](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/3d2c0b6a-5f51-4c3a-b4d5-1759119ad8bc)
 
-- comm(보너스) 컬럼의 값이 NULL 값인 데이터만 사용한다는 의미이다.
+#### 👉 NVL / NVL2
+
+두 함수 모두 NULL 값을 대체 하는 함수지만, 사용법의 차이가 있다. 
+
+NVL 함수는 두 개의 인자가 존재하며 첫 번째 인자로 절달된 값이 NULL인 경우, 두 번째 인자로 전달된 값으로 대체합니다.
+
+NVL2 함수는 세 개의 인자가 존재하며 첫 번쨰 인자로 전달된 값이 NULL인 경우, 세 번쨰 인자로 전달된 값으로 대체하고, NULL인 경우 두 번째 인자로 전달된 값으로 대체합니다. 
+
+> NVL
+
+```sql 
+-- comm 컬럼의 값이 NULL이면 0으로 대체
+SELECT empno, ename, NVL(comm, 0) 
+FROM emp;
+```
+
+> NVL2
+
+```sql 
+SELECT empno, ename, NVL2(comm, '정보입력됨', '정보입력안됨') 
+FROM emp;
+```
+
+❗ 여기서 주의 해야할 점은 데이터를 대체하는 과정에서 데이터의 타입이 컬럼의 타입에 맞게 설정해야한다.  
+
+```sql
+SELECT NVL(comm, '보너스없음') FROM emp; 
+```  
+
+위의 쿼리문을 작성하면 유효한 숫자를 입력하라는 문구가 나오며 실행되지 않는다. 타입이 일치하지 않아 발생하는 문제이다.
+
+NVL의 경우에는 NULL이 아닌 데이터는 변화하지 않으므로 입력되는 첫 번째 인자에 맞게 타입을 설정해주면된다. 
+
+NVL2의 경우에는 좀 더 복잡하다. 두,세 번째의 타입을 동일하게 만들어 주거나, NULL이 아닐 때의 바뀌는 데이터인 두 번째 인자에 맞춰 타입을 설정해야 한다. 
+
+굳이 깊게 들어갈 필요는 없지만, 깊게 들어가면 오라클에서 자동형변환이 제공되는데 '문자 -> 숫자' 로 자동형변환되려면 문자의 형태가 숫자의 형태로만 이루어져 있을 때 가능하다.
+
+'숫자 -> 문자'의 경우에는 모든 숫자는 문자로 변형 가능하기 때문에 자동형변환 된다. 
+
+```sql
+-- NVL 
+-- 에러 O / NULL -> 문자, NULL X -> comm의 타입 (문자 != 숫자) 
+SELECT NVL(comm, '보너스 없음') FROM emp;
+
+-- NVL2 (기준은 NULL X의 타입) 
+-- 에러 O / NULL X -> 숫자, NULL -> 문자 
+SELECT NVL2(comm, 1000, '보너스 없음') FROM emp;
+
+-- 에러 X / NULL X -> 숫자, NULL -> 문자 (숫자형태문자 -> 숫자 변환가능)
+SELECT NVL2(comm, 1000, '10') FROM emp; 
+
+-- 에러 X / NULL X -> 숫자, NULL -> 숫자
+SELECT NVL2(comm, 1000, 10) FROM emp; 
+
+-- 에러 X / NULL X -> 문자, NULL -> 숫자 (숫자 -> 문자 변환가능)
+SELECT NVL2(comm, '보너스 있음', 0) FROM emp; 
+
+-- 에러 X / NULL X -> 문자, NULL -> 문자 
+SELECT NVL2(comm, '보너스 있음', '보너스 없음') FROM emp; 
+```  
+
+문자, 숫자 타입의 경우에는 이런 형식이 가능하지만, 다른 DATE나 TIMESTAMP 등의 경우는 어떻게 다른지는 모르겠다. 
+
+확실한건 출력되는 타입을 맞춰줘야지만 에러가 발생하지 않는다는 것이니 이점을 주의해서 사용하자.
+
+#### 👉 NULLIF 
+
+NULLIF는 두 개의 인자를 필요로 하며, 두 인자값을 비교하여 동일한 경우 NULL을 반환하고, 다른경우에는 첫 번째 인자를 반환합니다. 
+
+
+
+
+
+
 
 ***
 
