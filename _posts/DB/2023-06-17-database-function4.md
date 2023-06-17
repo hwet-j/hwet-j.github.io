@@ -171,7 +171,7 @@ NULL을 다루면서 NULL 값인가 아닌가에 따라 값을 변환하는 함�
 
 DECODE의 기본적인 문법 형태는 `DECODE(expression, value1, result1, value2, result2, ..., default_result)` 의 형태이다.
 
-DECODE는 가장 첫 인자에 표현식(expression)과 value가 동일하면, 해당 value에 맞는 result 값을 반환한다. 
+첫 인자에 표현식(expression)과 value가 동일하면, 해당 value에 맞는 result 값을 반환한다. 
 
 DECODE의 경우에는 코드를 좀 더 이해하기 쉽도록 scott 계정에 존재하지 않는 데이터로 예를 들겠습니다.
 
