@@ -179,7 +179,9 @@ VALUES (11, 'SCOTCH');
 
 ![LEFT_JOIN](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/7bc65578-dbb3-4a3c-8807-d0769365279f)
 
-왼쪽 테이블의 모든 레코드를 출력하며, 오른쪽 테이블에 일치하는 레코드가 있는 경우 해당 레코드도 같이 반환합니다. 
+왼쪽 테이블의 모든 레코드를 출력하며, 오른쪽 테이블에 일치하는 레코드가 있는 경우 해당 레코드도 같이 반환합니다.
+
+LEFT OUTER JOIN은 OUTER을 생략해도 동일한 코드이다.
 
 ```sql 
 SELECT A.PK AS A_PK, A.Value AS A_Value,
@@ -189,7 +191,7 @@ LEFT JOIN Table_B B
 ON A.PK = B.PK
 ```
 
-| 열1 | 열2 | 열3 | 열3 |
+| A_PK  | A_Value | B_Value | B_PK |
 |----|-----|-----|-----|
 |1| FOX    |   TROT    |      1|
 |2| COP     |   CAR     |      2|
@@ -201,8 +203,32 @@ ON A.PK = B.PK
 |10| LUCENT   |  NULL     |  NULL|
 
 
+####  📎 RIGHT OUTER JOIN
 
+![RIGHT_JOIN](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/9b23b1d6-79be-4ab5-817b-5ffc38bd4bff)
 
+오른쪽 테이블의 모든 레코드를 출력하며, 왼쪽 테이블에 일치하는 레코드가 있는 경우 해당 레코드도 같이 반환합니다.
+
+RIGHT OUTER JOIN은 OUTER을 생략해도 동일한 코드이다.
+
+```sql 
+SELECT A.id AS A_PK, A.name AS A_Value,
+B.name AS B_Value, B.id AS B_PK
+FROM Table_A A
+RIGHT JOIN Table_B B
+ON A.id = B.id;
+```
+
+| A_PK      | A_Value    | B_Value   | B_PK |
+|-----------|------------|-----------|-----|
+| 1         | FOX        | TROT      |      1|
+| 2         | COP        | CAR       |      2|
+| 3         | TAXI       | CAB       |     3|
+| 6         | WASHINGTON |  MONUMENT |     6|
+| 7         | DELL       | PC         |  7   |
+ | NULL| NULL     | MICROSOFT  | 8       |
+| NULL| NULL      | APPLE      | 9         |
+ | NULL|  NULL    | SCOTCH     | 11       |
 
 
 ***
