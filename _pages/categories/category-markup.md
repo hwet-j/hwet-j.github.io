@@ -1,7 +1,7 @@
 ---
 title: "마크업 언어"
 layout: archive
-permalink: categories/MarkUp
+permalink: categories/HTML
 author_profile: true
 sidebar_main: true
 ---
