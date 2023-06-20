@@ -11,7 +11,7 @@ toc: true
 toc_sticky: true
 
 date: 2023-06-17
-last_modified_at: 2023-06-19
+last_modified_at: 2023-06-20
 ---
 
 
@@ -117,6 +117,7 @@ OUTER JOIN의 경우는 emp, dept 테이블은 이해하기에 그렇게 좋은 
 
 <pre>
 <code>
+```
 -- 해당 코드는 참고1 페이지에서 사용한 데이터임
 -- TABLE_A 생성
 CREATE TABLE TABLE_A (
@@ -168,7 +169,7 @@ INSERT INTO TABLE_B (id, name)
 VALUES (9, 'APPLE');
 INSERT INTO TABLE_B (id, name)
 VALUES (11, 'SCOTCH');
-
+```
 </code>
 <hr/>
 </pre>
@@ -184,6 +185,7 @@ VALUES (11, 'SCOTCH');
 LEFT OUTER JOIN은 OUTER을 생략해도 동일한 코드이다.
 
 ```sql 
+-- LEFT JOIN
 SELECT A.PK AS A_PK, A.Value AS A_Value,
 B.Value AS B_Value, B.PK AS B_PK
 FROM Table_A A
@@ -212,6 +214,7 @@ ON A.PK = B.PK
 RIGHT OUTER JOIN은 OUTER을 생략해도 동일한 코드이다.
 
 ```sql 
+-- RIGHT JOIN
 SELECT A.id AS A_PK, A.name AS A_Value,
 B.name AS B_Value, B.id AS B_PK
 FROM Table_A A
@@ -239,6 +242,7 @@ FULL OUTER JOIN은 오른쪽 테이블의 레코드와 왼쪽 레코드를 결�
 LEFT JOIN과 RIGHT JOIN이 결합이며, 일치하는 행, 일치하지 않는 행 모두를 반환한다. 즉, 양측에서 한 테이블에서만 존재하는 행도 전부 가져온다.
 
 ```sql 
+-- OUTER JOIN
 SELECT A.id AS A_PK, A.name AS A_Value,
 B.name AS B_Value, B.id AS B_PK
 FROM Table_A A
@@ -274,6 +278,7 @@ LEFT OUTER JOIN에서 공통된 부분을 제외한 데이터, 즉 차집합의 
 여기서 WHERE 절에 IS NULL을 사용하여 값을 추출한다.
 
 ```sql 
+-- LEFT EXCLUDING JOIN
 SELECT A.id AS A_PK, A.name AS A_Value,
 B.name AS B_Value, B.id AS B_PK
 FROM Table_A A
@@ -296,6 +301,7 @@ WHERE B.id IS NULL;
 LEFT Excluding JOIN 와 동일하지만 기준이 오른쪽 테이블이다.
 
 ```sql 
+-- RIGHT EXCLUDING JOIN
 SELECT A.id AS A_PK, A.name AS A_Value,
 B.name AS B_Value, B.id AS B_PK
 FROM Table_A A
@@ -314,6 +320,29 @@ WHERE A.id IS NULL;
 #### 🔗 OUTER Excluding JOIN
 
 ![OUTER_EXCLUDING_JOIN](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/5f2387e8-18d1-4696-b747-b66f61eba293)
+
+이 쿼리문은 공통의 데이터를 제외하고 왼쪽 테이블, 오른쪽 테이블의 모든 레코드를 반환한다.
+
+```sql 
+-- OUTER EXCLUDING JOIN
+SELECT A.id AS A_PK, A.name AS A_Value,
+B.name AS B_Value, B.id AS B_PK
+FROM Table_A A
+FULL OUTER JOIN Table_B B
+ON A.id = B.id
+WHERE A.id IS NULL
+OR B.id IS NULL;
+```
+
+| A_PK                            | A_Value                    | B_Value            | B_PK  |
+|---------------------------------|----------------------------|--------------------|-------|
+|NULL |NULL |      MICROSOFT  |   8|
+|NULL |NULL  |     APPLE     |    9|
+|NULL| NULL  |     SCOTCH   |    11|
+|5 |ARIZONA   | NULL       |NULL|
+|4 |LINCOLN   | NULL      | NULL|
+|10| LUCENT   |  NULL     |  NULL|
+
 
 
 
