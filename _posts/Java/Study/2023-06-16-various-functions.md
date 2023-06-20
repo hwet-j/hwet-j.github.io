@@ -1,6 +1,6 @@
 ---
 title:  "[Java] 여러가지 기능"  
-excerpt: "어러가지 라이브러리, 메서드, 정규표현식 등을 알아보자"
+excerpt: "여러가지 라이브러리, 메서드, 정규표현식 등을 알아보자"
 
 categories: # 분류하고싶은 카테고리 입력
   - Java
@@ -14,7 +14,7 @@ published: true
 author: Hwet
 
 date: 2023-06-16
-last_modified_at: 2023-06-16
+last_modified_at: 2023-06-20
 ---
 
 인터넷에서 검색하여 여러가지를 참고하여 정리하였습니다.    
