@@ -189,6 +189,13 @@ B.Value AS B_Value, B.PK AS B_PK
 FROM Table_A A
 LEFT JOIN Table_B B
 ON A.PK = B.PK
+
+-- LEFT를 명시하지 않고도 가능하다. (+) 사용 +가 명시된쪽 데이터는 전부 출력
+SELECT A.PK AS A_PK, A.Value AS A_Value,
+B.Value AS B_Value, B.PK AS B_PK
+FROM Table_A A
+JOIN Table_B B
+ON A.PK(+) = B.PK
 ```
 
 | A_PK  | A_Value | B_Value | B_PK |
@@ -218,6 +225,13 @@ B.name AS B_Value, B.id AS B_PK
 FROM Table_A A
 RIGHT JOIN Table_B B
 ON A.id = B.id;
+
+-- LEFT를 명시하지 않고도 가능하다. (+) 사용 +가 명시된쪽 데이터는 전부 출력
+SELECT A.PK AS A_PK, A.Value AS A_Value,
+B.Value AS B_Value, B.PK AS B_PK
+FROM Table_A A
+JOIN Table_B B
+ON A.PK = B.PK(+)
 ```
 
 | A_PK      | A_Value    | B_Value   | B_PK |
@@ -341,6 +355,34 @@ OR B.id IS NULL;
 |4 |LINCOLN   | NULL      | NULL|
 |10| LUCENT   |  NULL     |  NULL|
 
+### 🧵 CROSS JOIN
+
+두 개의 테이블로 조합하여 만들수 있는 모든 조합을 생성하여 반환한다.
+
+CROSS JOIN을 명시해도 되고 따로 명시하지 않고 두 개의 테이블을 사용하면 자동으로 생성된다.
+
+```sql 
+-- CROSS JOIN (명시)
+SELECT A.id AS A_PK, A.name AS A_Value,
+B.name AS B_Value, B.id AS B_PK
+FROM Table_A A CROSS JOIN Table_B B;
+
+-- CROSS JOIN (명시X)
+SELECT A.id AS A_PK, A.name AS A_Value,
+B.name AS B_Value, B.id AS B_PK
+FROM Table_A A, Table_B B;
+```
+
+### 🧵 SELF JOIN
+
+SELF JOIN은 자기자신을 사용하여 연결하는 것이다. 실질적인 방법은 위에 설명한 내용들과 동일함.
+
+```sql
+-- a테이블에서 사원의 매니저 데이터만 출력하는 쿼리문이다. 
+SELECT a.empno "사원번호", a.ename "사원명", a.mgr "관리자번호", b.ename "관리자명"
+FROM emp a, emp b
+WHERE a.mgr = b.empno;
+```
 
 
 
