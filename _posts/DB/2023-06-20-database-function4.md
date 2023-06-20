@@ -125,12 +125,14 @@ SELECT NVL2(comm, '보너스 있음', '보너스 없음') FROM emp;
 
 NULLIF는 두 개의 인자를 필요로 하며, 두 인자값을 비교하여 동일한 경우 NULL을 반환하고, 다른경우에는 첫 번째 인자를 반환합니다.
 
-DECODE의 기본적인 문법 형태는 `DECODE(expression, value1, result1, value2, result2, ..., default_result)` 의 형태이다.
+표현식이 NULL인지 파악하여 그 값을 변화시키는 것이 아닌, 조건과 표현식이 동일한지 파악하는 함수이다. 
 
-DECODE는 가장 첫 인자에 표현식(expression)과 value가 동일하면, 해당 value에 맞는 result 값을 반환한다.
-첫 인자에 표현식(expression)과 value가 동일하면, 해당 value에 맞는 result 값을 반환한다.
+```sql 
+SELECT NULLIF(comm, 300)
+FROM emp;
+```
 
-DECODE의 경우에는 코드를 좀 더 이해하기 쉽도록 scott 계정에 존재하지 않는 데이터로 예를 들겠습니다.
+comm이 300이라면 NULL로 치환된다.
 
 
 #### 👉 DECODE
