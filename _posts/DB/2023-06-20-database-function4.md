@@ -1,11 +1,11 @@
 ---
 title:  "[DB] OracleDB 기타 함수"  
-excerpt: "TO_DATE"
+excerpt: "NULL, CASE"
 
 categories: # 분류하고싶은 카테고리 입력
   - ORACLEDB
 tags:     # 중요 키워드
-  - [OracleDB, NULL]
+  - [OracleDB, NULL, CASE]
 
 toc: true
 toc_sticky: true
@@ -16,16 +16,20 @@ last_modified_at: 2023-06-20
 
 
 인터넷에서 검색하여 여러가지를 참고하여 정리하였습니다.    
-[참고1]()
+[참고1](https://product.kyobobook.co.kr/detail/S000001032057)
 {: .notice--warning}
 
-## 여러 함수
+## 여러가지 함수
+
+각 함수를 설명하기 위해서 Scott 계정에 기본적인 EMP 테이블을 사용하여 예시를 들겠습니다.
+
+[EMP테이블](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/bd1b5b9e-26ff-4049-918c-20e6d0ef9d08)
+
+### NULL값 다루기
 
 데이터를 다루다보면 명시적으로 또는 암시적으로 NULL 데이터가 들어가 있는 경우가 있는데 이 NULL을 다룰줄 알아야 원하는 대로 데이터를 다룰 수 있다.
 
 #### 👉 IS NULL / IS NOT NULL
-
-IS NULL을 WHERE 절에 사용하여서 NULL 값인 데이터만 사용한다거나 IS NOT NULL 을 사용하여 NULL 값이 아닌 데이터만 사용할 수 있다.
 
 IS NULL은 데이터가 NULL 인가 확인하는 명령어
 
@@ -34,14 +38,14 @@ IS NOT NULL은 데이터가 NULL이 아닌가 확인하는 명령어 이다.
 > IS NULL
 
 ```sql 
--- IS NULL
 -- emp 테이블에서 comm 컬럼의 값이 NULL인 경우만 출력
 SELECT *
 FROM emp
 WHERE comm IS NULL;
 ```
 
-`결과`  
+`결과`
+
 COMM 컬럼의 값이 NULL 데이터만 추출된 것을 확인할 수 있다.
 
 ![image](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/5955a258-5cbb-45fa-9093-9c1bd6797443)
@@ -49,14 +53,14 @@ COMM 컬럼의 값이 NULL 데이터만 추출된 것을 확인할 수 있다.
 > IS NOT NULL
 
 ```sql 
--- IS NOT NULL
 -- emp 테이블에서 comm 컬럼의 값이 NULL이 아닌 경우만 출력
 SELECT *
 FROM emp
 WHERE comm IS NOT NULL;
 ```
 
-`결과`  
+`결과`
+
 COMM 컬럼의 값이 NULL이 아닌 데이터만 추출된 것을 확인할 수 있다.
 
 ![image](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/3d2c0b6a-5f51-4c3a-b4d5-1759119ad8bc)
@@ -104,15 +108,20 @@ NVL2의 경우에는 좀 더 복잡하다. 두,세 번째의 타입을 동일하
 -- NVL 
 -- 에러 O / NULL -> 문자, NULL X -> comm의 타입 (문자 != 숫자) 
 SELECT NVL(comm, '보너스 없음') FROM emp;
+
 -- NVL2 (기준은 NULL X의 타입) 
 -- 에러 O / NULL X -> 숫자, NULL -> 문자 
 SELECT NVL2(comm, 1000, '보너스 없음') FROM emp;
+
 -- 에러 X / NULL X -> 숫자, NULL -> 문자 (숫자형태문자 -> 숫자 변환가능)
 SELECT NVL2(comm, 1000, '10') FROM emp; 
+
 -- 에러 X / NULL X -> 숫자, NULL -> 숫자
 SELECT NVL2(comm, 1000, 10) FROM emp; 
+
 -- 에러 X / NULL X -> 문자, NULL -> 숫자 (숫자 -> 문자 변환가능)
 SELECT NVL2(comm, '보너스 있음', 0) FROM emp; 
+
 -- 에러 X / NULL X -> 문자, NULL -> 문자 
 SELECT NVL2(comm, '보너스 있음', '보너스 없음') FROM emp; 
 ```  
@@ -128,12 +137,38 @@ NULLIF는 두 개의 인자를 필요로 하며, 두 인자값을 비교하여 �
 표현식이 NULL인지 파악하여 그 값을 변화시키는 것이 아닌, 조건과 표현식이 동일한지 파악하는 함수이다. 
 
 ```sql 
-SELECT NULLIF(comm, 300)
+-- comm 컬럼의 값이 0이면 null 값으로 대체
+SELECT NULLIF(comm, 0)
 FROM emp;
 ```
 
-comm이 300이라면 NULL로 치환된다.
+#### 👉 COALESCE
 
+COALESCE는 인자를 최소 두 개만 작성해주면 되며 최대 인자수는 따로 존재하지 않는것 같다.
+
+인자를 작성한 순서대로 데이터를 확인하며 데이터가 NULL인지 확인하며, NULL이 아닌 값이 나오면 값을 반환하고 다음 record 출력으로 넘어간다.
+
+```sql 
+-- emp 테이블에서 comm , mgr중에서 NULL이 아닌 첫 번째 값을 반환
+SELECT COALESCE(comm , mgr) FROM emp;
+```
+
+❗ 여기서도 나열되는 타입이 동일하게 설정하여 하나의 컬럼에서 나오는 데이터가 하나의 데이터 타입으로 출력가능 하도록 설정해야 한다.
+
+```sql 
+-- emp 테이블에서 comm , mgr, job중에서 NULL이 아닌 첫 번째 값을 반환
+SELECT COALESCE(comm , mgr, job) FROM emp;
+```  
+
+위의 쿼리문은 실행할 수 없는 쿼리문이다.
+
+comm, mgr은 숫자(NUMBER) 타입이지만, job의 경우에는 문자(VARCHAR2)타입이기 때문에 데이터 타입이 맞지 않기 때문이다.
+
+***
+
+### 조건에 따라 값 변환하기
+
+NULL을 다루면서 NULL 값인가 아닌가에 따라 값을 변환하는 함수를 몇가지 다뤘는데, NULL 이외에 다른 조건에 따라 값을 변환하는 함수를 알아보자.
 
 #### 👉 DECODE
 
@@ -152,8 +187,6 @@ SELECT student_name, DECODE(score,
                            'D') AS grade
 FROM students;
 ```
-
-***
 
 학생의 점수에 따라 학생의 등급을 나눠 등급을 출력하도록 하는 쿼리문입니다.
 
