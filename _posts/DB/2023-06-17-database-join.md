@@ -175,7 +175,7 @@ VALUES (11, 'SCOTCH');
 
 </details></p>
 
-#### 📎 LEFT OUTER JOIN
+#### 🔗 LEFT OUTER JOIN
 
 ![LEFT_JOIN](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/7bc65578-dbb3-4a3c-8807-d0769365279f)
 
@@ -203,7 +203,7 @@ ON A.PK = B.PK
 |10| LUCENT   |  NULL     |  NULL|
 
 
-####  📎 RIGHT OUTER JOIN
+#### 🔗 RIGHT OUTER JOIN
 
 ![RIGHT_JOIN](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/9b23b1d6-79be-4ab5-817b-5ffc38bd4bff)
 
@@ -229,6 +229,92 @@ ON A.id = B.id;
  | NULL| NULL     | MICROSOFT  | 8       |
 | NULL| NULL      | APPLE      | 9         |
  | NULL|  NULL    | SCOTCH     | 11       |
+
+#### 🔗 FULL OUTER JOIN
+
+![FULL_OUTER_JOIN](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/e8ac414a-f90b-4dc3-8317-b8a0eb44136f)
+
+FULL OUTER JOIN은 오른쪽 테이블의 레코드와 왼쪽 레코드를 결합하여 모든 레코드를 반환합니다.
+
+LEFT JOIN과 RIGHT JOIN이 결합이며, 일치하는 행, 일치하지 않는 행 모두를 반환한다. 즉, 양측에서 한 테이블에서만 존재하는 행도 전부 가져온다.
+
+```sql 
+SELECT A.id AS A_PK, A.name AS A_Value,
+B.name AS B_Value, B.id AS B_PK
+FROM Table_A A
+FULL OUTER JOIN Table_B B
+ON A.id = B.id;
+```
+
+| A_PK      | A_Value    | B_Value  | B_PK |
+|-----------|------------|----------|-----|
+|1| FOX        | TROT     | 1       |
+|2| COP        | CAR      |       2 |
+|3 | TAXI       | CAB      |    3
+|6 | WASHINGTON | MONUMENT |   6     |
+|7 | DELL       | PC       |      7
+|NULL|  NULL      | MICROSOFT  |    8     |
+|NULL | NULL       | APPLE      |     9|
+|NULL | NULL       | SCOTCH     |    11|
+|5 | ARIZONA    | NULL       |   NULL|
+|4 | LINCOLN    | NULL       |    NULL|
+|10 | LUCENT     |  NULL      |   NULL|
+
+
+#### 🔗 LEFT Excluding JOIN
+
+![LEFT_EXCLUDING_JOIN](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/f8a2a85c-1fa3-4325-be23-a8020afad27c)
+
+LEFT OUTER JOIN에서 공통된 부분을 제외한 데이터, 즉 차집합의 데이터를 반환한다. 
+
+문법이 존재한다기 보다는 OUTER JOIN의 특징을 활용하여 데이터를 추출한다. 
+
+왼쪽 테이블을 기준으로 모든 데이터를 반환하고 공통되지 않는 데이터가 있을 때 NULL 값이 들어가게된다. 
+
+여기서 WHERE 절에 IS NULL을 사용하여 값을 추출한다.
+
+```sql 
+SELECT A.id AS A_PK, A.name AS A_Value,
+B.name AS B_Value, B.id AS B_PK
+FROM Table_A A
+LEFT JOIN Table_B B
+ON A.id = B.id
+WHERE B.id IS NULL;
+```
+
+| A_PK | A_Value | B_Value   | B_PK |
+|------|---------|-----------|-----|
+| 4    | LINCOLN | NULL    |      NULL |
+| 5    | ARIZONA | NULL    | NULL    |
+ | 10   | LUCENT  |   NULL  | NULL    |
+
+
+#### 🔗 RIGHT Excluding JOIN
+
+![RIGHT_EXCLUDING_JOIN](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/2ea43219-d3aa-4272-99d1-041ac60acdd2)
+
+LEFT Excluding JOIN 와 동일하지만 기준이 오른쪽 테이블이다.
+
+```sql 
+SELECT A.id AS A_PK, A.name AS A_Value,
+B.name AS B_Value, B.id AS B_PK
+FROM Table_A A
+RIGHT JOIN Table_B B
+ON A.id = B.id
+WHERE A.id IS NULL;
+```
+
+| A_PK                            | A_Value                    | B_Value            | B_PK  |
+|---------------------------------|----------------------------|--------------------|-------|
+| NULL| NULL     | MICROSOFT   | 8     |
+ | NULL | NULL    | APPLE      | 9     |
+ | NULL | NULL    |    SCOTCH    |    11 |
+
+
+#### 🔗 OUTER Excluding JOIN
+
+![OUTER_EXCLUDING_JOIN](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/5f2387e8-18d1-4696-b747-b66f61eba293)
+
 
 
 ***
