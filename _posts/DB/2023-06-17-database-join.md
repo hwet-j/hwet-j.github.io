@@ -115,8 +115,7 @@ OUTER JOIN의 경우는 emp, dept 테이블은 이해하기에 그렇게 좋은 
 <p><details>
 <summary style="color:red;">테스트를 위한 테이블 생성 코드</summary><!-- summary 아래 한칸 공백 필요 -->
 
-<pre>
-<code>
+
 ```
 -- 해당 코드는 참고1 페이지에서 사용한 데이터임
 -- TABLE_A 생성
@@ -170,9 +169,8 @@ VALUES (9, 'APPLE');
 INSERT INTO TABLE_B (id, name)
 VALUES (11, 'SCOTCH');
 ```
-</code>
+
 <hr/>
-</pre>
 
 </details></p>
 
