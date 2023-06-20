@@ -1,5 +1,5 @@
 ---
-title: "ORACLE"
+title: "데이터베이스"
 layout: archive
 permalink: categories/ora_db
 author_profile: true

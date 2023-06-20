@@ -1,7 +1,7 @@
 ---
-title: "CodeUp 사이트 문제 풀이"
+title: "마크업 언어"
 layout: archive
-permalink: categories/codeup
+permalink: categories/HTML
 author_profile: true
 sidebar_main: true
 ---
@@ -10,7 +10,5 @@ sidebar_main: true
 
 ***
 
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=hwet-j&repo=Coding-test)](https://github.com/hwet-j/Coding-test)
-
-{% assign posts = site.categories.CodeUp %}
+{% assign posts = site.categories.HTML %}
 {% for post in posts %} {% include archive-single2.html type=page.entries_layout %} {% endfor %}
