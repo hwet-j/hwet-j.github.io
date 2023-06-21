@@ -8,7 +8,7 @@
 🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧<br>
 🔨🔨🔨🔨🔨🔨🔨🔨🔨🔨🔨🔨🔨🔨🔨🔨<br>
 
-### ansohxxn 님의 코드로 부터 작성되었습니다.
+### ansohxxn 님의 블로그 테마를 가져와서 작성하였습니다.
 
 ansohxxn 님의 Github 홈페이지 : https://github.com/ansohxxn
 <br>
