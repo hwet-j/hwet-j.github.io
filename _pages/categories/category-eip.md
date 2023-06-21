@@ -1,7 +1,7 @@
 ---
-title: "C++ STL & 표준 라이브러리 정리"
+title: "정처기 문제풀이"
 layout: archive
-permalink: categories/stl
+permalink: categories/EIP
 author_profile: true
 sidebar_main: true
 ---
@@ -10,5 +10,5 @@ sidebar_main: true
 
 ***
 
-{% assign posts = site.categories.STL %}
+{% assign posts = site.categories.Certificate %}
 {% for post in posts %} {% include archive-single2.html type=page.entries_layout %} {% endfor %}

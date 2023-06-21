@@ -112,8 +112,8 @@
             </ul>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "FFD" %}
-                        <li><a href="/categories/ide" class="">깜지({{category[1].size}})</a></li>
+                    {% if category[0] == "EIP" %}
+                        <li><a href="/categories/EIP" class="">정처기 ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
