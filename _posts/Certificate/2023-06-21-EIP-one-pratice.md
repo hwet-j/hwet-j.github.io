@@ -1,5 +1,5 @@
 ---
-title:  "[정보처리기사] 1과목 : 소프트웨어 설계 문제 " 
+title:  "[정보처리기사] 1과목 : 소프트웨어 설계 연습문제 " 
 
 categories:
   - Certificate
