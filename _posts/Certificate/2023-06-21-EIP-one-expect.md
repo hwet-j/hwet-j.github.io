@@ -444,6 +444,9 @@ d. 비용이 많이 들거나 시간이 많이 소요되는 대규모 프로젝�
 <hr/>
 </details>
 
+<details>
+<summary>문제에 사용된 내용보기</summary>
+
 <blockquote>
   <p><strong>애자일 모형</strong></p>
 <ul>
@@ -476,6 +479,9 @@ d. 비용이 많이 들거나 시간이 많이 소요되는 대규모 프로젝�
 <hr/>
 </details>
 
+<details>
+<summary>문제에 사용된 내용보기</summary>
+
 <blockquote>
   <p><strong>애자일 모형</strong></p>
 <ul>
@@ -507,6 +513,9 @@ d. 비용이 많이 들거나 시간이 많이 소요되는 대규모 프로젝�
 <hr/>
 </details>
 
+<details>
+<summary>문제에 사용된 내용보기</summary>
+
 <blockquote>
   <p><strong>스크럼 기법</strong></p>
 <ul>
@@ -520,7 +529,82 @@ d. 비용이 많이 들거나 시간이 많이 소요되는 대규모 프로젝�
 </details>
 
 
+#### <span style="color:#0489B1;">16. 다음 제시된 XP(eXtream Programming)의 개발 프로세스를 순서에 맞게 나열한 것은?</span>
+``` 
+ㄱ. 주기 
+ㄴ. 승인 검사
+ㄷ. 릴리즈 계획 수립
+ㄹ. 소규모 릴리즈
+```
+1. ㄱ - ㄴ - ㄷ - ㄹ
+2. ㄴ - ㄷ - ㄹ - ㄱ
+3. ㄷ - ㄴ - ㄹ - ㄱ
+4. ㄷ - ㄱ - ㄴ - ㄹ
 
+<details>
+<summary>정답 및 해설보기</summary>
+
+<blockquote>
+<p>정답 : 4번</p>
+<p>풀이 : 릴리즈 계획 수립 -> 주기 -> 승인 검사 -> 소규모 릴리즈</p>
+</blockquote>
+<hr/>
+</details>
+
+<details>
+<summary>문제에 사용된 내용보기</summary>
+
+<blockquote>
+  <p><strong>XP의 핵심 가치</strong></p>
+<ul>
+  <li>용기(Courage)</li>
+  <li>단순성(Simplicity)</li>
+  <li>의사소통(Communication)</li>
+  <li>피드백(Feedback)</li>
+  <li>존중(Respect)</li>
+</ul>
+<span style="color:red;">용단의피존</span>
+<p><strong>XP의 기본원리</strong></p>
+<ul>
+  <li>전체팀(Whole Team)</li>
+  <li>소규모 릴리즈(Small Releases)</li>
+  <li>테스트 주도 개발(Test-Driven Development)</li>
+  <li>계속적인 통합(Continuous Integration)</li>
+  <li>공동 소유권(Collective Ownership)</li>
+  <li>짝 프로그래밍(Pair Programming)</li>
+  <li>디자인 개선(Design Improvement) 또는 리팩토링(Refactoring)</li>
+</ul>
+<span style="color:red;">전소테 계공짝디</span>
+</blockquote>
+<hr/>
+</details>
+
+
+#### <span style="color:#0489B1;">17. 다음중 오픈 소스 사용에 따른 고려사항에 속하지 않는 것은?</span>
+1. 라이선스의 종류
+2. 사용자 수
+3. 기술의 지속 가능성
+4. 라이선스의 비용
+
+<details>
+<summary>정답 및 해설보기</summary>
+
+<blockquote>
+<p>정답 : 4번</p>
+<p>풀이 : 오픈 소스란 누구나 제한 없이 무료로 사용할 수 있도록 소스 코드를 공개한 것이다.</p>
+</blockquote>
+<hr/>
+</details>
+
+<details>
+<summary>문제에 사용된 내용보기</summary>
+
+<blockquote>
+  <p><strong>오픈소스</strong></p>
+<p>오픈소스는 OPEN SOURCE 무료로 사용하는 자원이다.</p>
+</blockquote>
+<hr/>
+</details>
 
 
 
