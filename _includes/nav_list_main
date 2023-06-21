@@ -112,7 +112,7 @@
             </ul>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "EIP" %}
+                    {% if category[0] == "Certificate" %}
                         <li><a href="/categories/EIP" class="">정처기 ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
