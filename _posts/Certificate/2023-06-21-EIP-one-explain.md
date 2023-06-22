@@ -8,10 +8,10 @@ tags:
 
 toc: true
 toc_sticky: true
-published: false
+published: true
 
 date: 2023-06-21
-last_modified_at: 2023-06-21
+last_modified_at: 2023-06-22
 ---
 
 # 정보처리기사
