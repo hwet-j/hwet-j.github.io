@@ -3,7 +3,7 @@ title:  "[Web] 서버 실행중 발생하는 NoClassDefFoundError"
 excerpt: "코드상 아무런 문제 없어보이지만, 서버를 실행하면 발생하는 문제"
 
 categories: # 분류하고싶은 카테고리 입력
-  - Web
+  - Error
 tags:     # 중요 키워드
   - [HTML, JSP]
 

@@ -3,7 +3,7 @@ title:  "[Web/JSP] DB연동 과정중 ClassNotFoundException 문제"
 excerpt: "DB 연동중에 발생하는 ClassNotFoundException"
 
 categories: # 분류하고싶은 카테고리 입력
-  - Web
+  - Error
 tags:     # 중요 키워드
   - [HTML, JSP]
 
