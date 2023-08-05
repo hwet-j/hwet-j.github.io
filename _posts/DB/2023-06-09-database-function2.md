@@ -1,9 +1,9 @@
 ---
-title:  "[DB] OracleDB 문자관련 함수"  
+title:  "[DB/OracleDB] 문자관련 함수"  
 excerpt: "SUBSTR, INSTR, TO_CHAR 문자관련 함수다루기"
 
 categories: # 분류하고싶은 카테고리 입력
-  - ORACLEDB
+  - DataBase
 tags:     # 중요 키워드
   - [OracleDB, SUBSTR, INSTR, TO_CHAR]
 

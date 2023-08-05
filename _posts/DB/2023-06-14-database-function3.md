@@ -1,9 +1,9 @@
 ---
-title:  "[DB] OracleDB 날짜관련 함수"  
+title:  "[DB/OracleDB] 날짜관련 함수"  
 excerpt: "TO_DATE"
 
 categories: # 분류하고싶은 카테고리 입력
-  - ORACLEDB
+  - DataBase
 tags:     # 중요 키워드
   - [OracleDB, TO_DATE]
 

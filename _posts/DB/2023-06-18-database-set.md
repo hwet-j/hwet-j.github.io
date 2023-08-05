@@ -1,9 +1,9 @@
 ---
-title:  "[DB] OracleDB 집합"  
+title:  "[DB/OracleDB] 집합"  
 excerpt: "JOIN, 집합"
 
 categories: # 분류하고싶은 카테고리 입력
-  - ORACLEDB
+  - DataBase
 tags:     # 중요 키워드
   - [OracleDB]
 

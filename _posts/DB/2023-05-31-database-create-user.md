@@ -1,9 +1,9 @@
 ---
-title:  "[DB] OracleDB 계정생성, 권한부여"  
+title:  "[DB/OracleDB] 계정생성, 권한부여"  
 excerpt: "테이블스페이스 생성, 사용자생성...."
 
 categories: # 분류하고싶은 카테고리 입력
-  - ORACLEDB
+  - DataBase
 tags:     # 중요 키워드
   - [OracleDB]
 

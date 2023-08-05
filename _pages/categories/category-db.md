@@ -1,7 +1,7 @@
 ---
 title: "데이터베이스"
 layout: archive
-permalink: categories/ora_db
+permalink: categories/db
 author_profile: true
 sidebar_main: true
 ---
@@ -10,5 +10,5 @@ sidebar_main: true
 
 ***
 
-{% assign posts = site.categories.ORACLEDB %}
+{% assign posts = site.categories.DataBase %}
 {% for post in posts %} {% include archive-single2.html type=page.entries_layout %} {% endfor %}

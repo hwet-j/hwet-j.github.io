@@ -1,33 +1,42 @@
 ---
-title:  "[DB/OracleDB] 뷰"  
-excerpt: "VIEW, 가상테이블"
+title:  "[DB/MySQL] Oracle Cloud를 사용하여 MySQL 사용하기"  
+excerpt: "MySQL 배포, 오라클 클라우드 무료 서버이용"
 
 categories: # 분류하고싶은 카테고리 입력
-  - DataBase
+  - MySQL
 tags:     # 중요 키워드
-  - [OracleDB]
+  - [Oracle Cloud]
 
 toc: true
 toc_sticky: true
 published: true
 
-date: 2023-06-20
-last_modified_at: 2023-06-20
+date: 2023-08-05
+last_modified_at: 2023-08-05
 ---
 
 
 인터넷에서 검색하여 여러가지를 참고하여 정리하였습니다.    
-[참고1]()
+[참고1](https://colabear754.tistory.com/110)
+[참고2](https://www.youtube.com/watch?v=wLgHEn2vcPo&t=1634s)
 {: .notice--warning}
 
-## VIEW
+# Oracle Cloud
 
-하나 이상의 테이블이나 다른 뷰의 결과 집합을 볼 수 있는 객체이다.
+오라클 클라우드는 최대 200GB까지 가상 머신(VM)을 무료로 운영할 수 있는 서비스입니다.
 
-뷰를 사용하여 복잡한 쿼리문을 단순화 하고 필요한 정보만 취합하여 사용 가능해 쿼리문을 단순화 시킬 수 있고,
-복잡한 쿼리를 뷰로 저장시켜 놓으면 검색을 통해 편리하게 사용 가능하며 ,뷰를 통해 다른 사용자가 데이터에 접근하기 용이하도록 만들 수 있다.
+여러 클라우드를 찾아 봤는데, 오래동안 무료로 사용할 수 있는 것이 오라클 클라우드 뿐이었습니다. 
 
-뷰는 가상 테이블이라고 말하는데 주의해야할 점은 데이터가 저장되는게 아닌 쿼리문이 저장되는 것이다.
+## Oracle Cloud 회원 가입
+
+- [오라클 클라우드 홈페이지 접속](https://www.oracle.com/cloud/)
+
+- 가입절차 진행
+
+- 지역은 가입 시 설정한 정보를 이후에 수정이 불가능하므로 주의 깊게 선택해야 합니다. 
+  - 한국/일본과 같은 경우는 속도가 빠르지만 사용가능한 메모리나 코어수가 적은것으로 알고있고 미국과 같은 경우는 속도면에서 느리지만 메모리나 코어수가 더 많은 것으로 알고있습니다. 
+
+- 
 
 ### 뷰의 생성
 

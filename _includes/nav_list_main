@@ -27,8 +27,8 @@
         <span class="nav__sub-title">DataBase</span>
                                   <ul>
                                       {% for category in site.categories %}
-                                          {% if category[0] == "ORACLEDB" %}
-                                              <li><a href="/categories/ora_db" class="">Oracle({{category[1].size}})</a></li>
+                                          {% if category[0] == "DataBase" %}
+                                              <li><a href="/categories/db" class="">Oracle({{category[1].size}})</a></li>
                                           {% endif %}
                                       {% endfor %}
                                   </ul>
