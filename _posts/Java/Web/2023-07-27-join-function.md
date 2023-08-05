@@ -24,7 +24,7 @@ last_modified_at: 2023-08-05
 
 ## 회원가입
 
-### 사용 기술 
+### 📌 사용 기술 
 
 - HTML
 - CSS
@@ -34,7 +34,7 @@ last_modified_at: 2023-08-05
 - AJAX
 - MySQL
 
-### MySQL 회원 테이블 생성
+### 📌 MySQL 회원 테이블 생성
 
 ```sql 
 CREATE TABLE IF NOT EXISTS user_info (
@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS user_info (
 
 성별 정보는 2가지 뿐이므로 MySQL의 데이터 타입중 하나인 ENUM을 사용하여 정의한 목록들로만 입력되도록 설정
 
-### 회원가입 폼 생성
+### 📌 회원가입 폼 생성
 
 `뽐뿌 페이지의 회원가입 형식을 가져와 사용할 DB에 맞게 수정하였습니다.`  [뽐뿌페이지이동](https://www.ppomppu.co.kr/)
 
@@ -71,7 +71,7 @@ CREATE TABLE IF NOT EXISTS user_info (
 - 만약 유효성 검사가 올바르게 진행되지 않았다면 각 요소에 경고문이 작성되며, 가입진행이 불가능하다.
 - 모든 정보를 규칙에 맞게 작성하였으면, 최종적으로 중복검사를 실행한다.
 
-### 입력요소 규칙 및 말풍선 설정
+### 📌 입력요소 규칙 및 말풍선 설정
 
 ![image](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/543d20e4-9ce5-4edc-9855-8f02655d6650){:width="50%"}
 
@@ -81,7 +81,7 @@ CREATE TABLE IF NOT EXISTS user_info (
 
 
 
-#### 말풍선 표시(focus)
+####  말풍선 표시(focus)
 
 ID, PASSWORD의 규칙 및 말풍선은 참고한 정보의 대부분을 그대로 사용 이외에 규칙이 필요해 보이는 정보는 규칙을 새로 작성
 
@@ -144,7 +144,7 @@ $('#user_id').blur(function(){
 
 chkUserId 라는 함수에서 유효성 검사를 실시하여 어떤 규칙에서 문제가 발생하였는지 msg에 담아 반환하여 해당 메시지를 브라우저에 출력한다. 
 
-### 유효성 검사 
+### 📌 유효성 검사 
 
 ``` 
 function chkUserId(user_id){
@@ -190,7 +190,7 @@ function chkUserId(user_id){
 
 msg에는 유효성검사 실패 규칙에 따라 메시지를 설정하여 반환한다.
 
-### Ajax를 활용하여 중복확인
+### 📌 Ajax를 활용하여 중복확인
 
 모든 정보를 규칙에 맞게 작성하였으면 최종적으로 DB에 있는 정보와 비교하여 중복된 데이터가 있는지 확인한다.
 
