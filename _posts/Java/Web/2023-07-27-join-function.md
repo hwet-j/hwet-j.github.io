@@ -73,11 +73,11 @@ CREATE TABLE IF NOT EXISTS user_info (
 
 ### 입력요소 규칙 및 말풍선 설정
 
-![image](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/543d20e4-9ce5-4edc-9855-8f02655d6650)
+![image](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/543d20e4-9ce5-4edc-9855-8f02655d6650){:width="50%"}
 
 `이미지 내에서 아이디 입력요소를 확인`해보면 focus 이벤트가 발생하면 해당 입력요소에 맞는 규칙 말풍선이 표시되며, blur 이벤트가 발생하면 말풍선이 사라지고 규칙에 맞는지 유효성 검사를 실시힌다.
 
-![image](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/9490321b-ef34-41f8-b8d0-a1c2ea3c887a)
+![image](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/9490321b-ef34-41f8-b8d0-a1c2ea3c887a){:width="50%"}
 
 
 
