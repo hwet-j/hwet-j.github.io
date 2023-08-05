@@ -38,14 +38,14 @@ last_modified_at: 2023-07-27
 
 ```sql 
 CREATE TABLE IF NOT EXISTS user_info (
-  user_id         VARCHAR(20) PRIMARY KEY,		  -- 회원아이디
-  user_pw 		    VARCHAR(16) NOT NULL,			    -- 비밀번호
-  user_name       VARCHAR(20),					        -- 이름
-  user_birth      DATE,							            -- 생일
-  user_nickname 	VARCHAR(40) UNIQUE,				    -- 닉네임
-  user_gender 	  ENUM('남성', '여성'),				  -- 성별 
-  user_tlno 		  VARCHAR(20) UNIQUE,				    -- 핸드폰번호
-  user_joindate 	DATE DEFAULT (CURRENT_DATE)		-- 회원가입날짜 
+  user_id         VARCHAR(20) PRIMARY KEY,      -- 회원아이디
+  user_pw         VARCHAR(16) NOT NULL,         -- 비밀번호
+  user_name       VARCHAR(20),                  -- 이름
+  user_birth      DATE,                         -- 생일
+  user_nickname   VARCHAR(40) UNIQUE,           -- 닉네임
+  user_gender     ENUM('남성', '여성'),           -- 성별 
+  user_tlno       VARCHAR(20) UNIQUE,           -- 핸드폰번호
+  user_joindate   DATE DEFAULT (CURRENT_DATE)   -- 회원가입날짜 
 );
 ```
 
@@ -72,6 +72,14 @@ CREATE TABLE IF NOT EXISTS user_info (
 - 모든 정보를 규칙에 맞게 작성하였으면, 최종적으로 중복검사를 실행한다.
 
 ### 입력요소 규칙 및 말풍선 설정
+
+![image](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/543d20e4-9ce5-4edc-9855-8f02655d6650)
+
+`이미지 내에서 아이디 입력요소를 확인`해보면 focus 이벤트가 발생하면 해당 입력요소에 맞는 규칙 말풍선이 표시되며, blur 이벤트가 발생하면 말풍선이 사라지고 규칙에 맞는지 유효성 검사를 실시힌다.
+
+![image](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/9490321b-ef34-41f8-b8d0-a1c2ea3c887a)
+
+
 
 #### 말풍선 표시(focus)
 
