@@ -22,13 +22,13 @@ last_modified_at: 2023-07-27
 {: .notice--warning}
 
 
-## JSTL이란?
+## 📌 JSTL이란?
 
 JSPL(JSP Standard Tag Library)란 자바코드를 캡슐화하는 기술을 자신만의 태그로 만드는 것을 말한다.
 
 &lt;jsp:include&gt; 나 &lt;jsp:usebean&gt; 과 같은 것을 말하며 연산이나 조건문,반복문을 통해 DB를 편하게 처리할 수 있게한다.
 
-### 태그의 종류
+### 🔗 태그의 종류
 
 #### 1. Core (prefix : c)
 
@@ -71,7 +71,7 @@ URI : [http://java.sun.com/jsp/jstl/functions]
 사용방법 : `<fn:태그명>`형태로 선언하여 사용한다. (태그명 : concat(), substring(), contains(), toUpperCase()....)
 
 
-### JSTL 특징
+### 🔗 JSTL 특징
 
 JSTL 기능 확장: JSTL은 기본적인 기능을 제공하지만, 확장하여 사용자 정의 태그를 만들 수도 있습니다. 이를 통해 사용자가 필요에 맞게 태그를 정의하고 재사용할 수 있습니다. 
 커스텀 태그 라이브러리를 만들어 활용할 수 있습니다.
