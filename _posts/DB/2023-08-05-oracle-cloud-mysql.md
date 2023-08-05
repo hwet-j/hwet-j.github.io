@@ -3,9 +3,9 @@ title:  "[DB/MySQL] Oracle Cloud를 사용하여 MySQL 사용하기"
 excerpt: "MySQL 배포, 오라클 클라우드 무료 서버이용"
 
 categories: # 분류하고싶은 카테고리 입력
-  - MySQL
+  - DataBase
 tags:     # 중요 키워드
-  - [Oracle Cloud]
+  - [Oracle Cloud, MySQL]
 
 toc: true
 toc_sticky: true
