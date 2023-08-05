@@ -26,7 +26,7 @@ last_modified_at: 2023-07-27
 
 JSPL(JSP Standard Tag Library)란 자바코드를 캡슐화하는 기술을 자신만의 태그로 만드는 것을 말한다.
 
-{% raw %}<jsp:include>{% endraw %} 나 {% raw %} <jsp:usebean> {% endraw %} 과 같은 것을 말하며 연산이나 조건문,반복문을 통해 DB를 편하게 처리할 수 있게한다.
+&lt;jsp:include&gt; 나 &lt;jsp:usebean&gt; 과 같은 것을 말하며 연산이나 조건문,반복문을 통해 DB를 편하게 처리할 수 있게한다.
 
 ### 태그의 종류
 
