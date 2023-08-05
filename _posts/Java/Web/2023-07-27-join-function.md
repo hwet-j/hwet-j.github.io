@@ -1,11 +1,11 @@
 ---
 title:  "[Web] 회원가입"  
-excerpt: "JSP Standard Tag Library"
+excerpt: "회원가입 기능 구현/유효성 검사"
 
 categories: # 분류하고싶은 카테고리 입력
   - Web
 tags:     # 중요 키워드
-  - [HTML, JSP]
+  - [HTML, JSP, AJAX]
 
 toc: true
 toc_sticky: true
@@ -14,7 +14,7 @@ published: true
 author: Hwet
 
 date: 2023-07-27
-last_modified_at: 2023-07-27
+last_modified_at: 2023-08-05
 ---
 
 회원가입관련 기본 정보는 뽐뿌 홈페이지의 형식을 참고하여 작성하였습니다. 
