@@ -546,11 +546,11 @@ return "index" : index라는 이름의 뷰를 찾아 클라이언트에게 보�
 
 파일 - 설정 - 플러그인 - Tomcat 검색 - Smart Tomcat 설치
 
-![image](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/61157b2d-e5ac-406e-ab97-d6315044d86a)
+![image](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/61157b2d-e5ac-406e-ab97-d6315044d86a){:width="50%"}
 
 우측 상단 - 구성 편집 
 
-![image](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/303f1ace-c3c0-42b9-837a-64bb9edea715)
+![image](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/303f1ace-c3c0-42b9-837a-64bb9edea715){:width="50%"}
 
 좌측 - 새 항목 추가 - 설치한 'Smart Tomcat'
 
