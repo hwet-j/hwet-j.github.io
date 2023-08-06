@@ -380,7 +380,7 @@ pom.xml의 project 태그 내에 해당 정보를 복사해서 넣어주면, 해
 
 > src/main/webapp/WEB-INF 폴더 설정
 
-1. web.xml
+- 1. web.xml
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -432,7 +432,7 @@ pom.xml의 project 태그 내에 해당 정보를 복사해서 넣어주면, 해
 </web-app>
 ```
 
-2. servlet-context.xml
+- 2. servlet-context.xml
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -465,7 +465,7 @@ context 태그의 설정에서 기본 패키지를 설정가능하다. 이후 �
 
 beans 태그의 속성명 prefix의 value값 설정으로 views 파일의 경로 설정이 가능하다.
 
-3. root-context.xml
+- 3. root-context.xml
 
 ```xml 
 <?xml version="1.0" encoding="UTF-8"?>
@@ -522,7 +522,7 @@ return "index" : index라는 이름의 뷰를 찾아 클라이언트에게 보�
 
 > src/main/webapp/views ---> servlet-context.xml에서 설정한 경로에 작성(각자 설정한 경로)
 
-```JSP
+```
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -554,24 +554,27 @@ return "index" : index라는 이름의 뷰를 찾아 클라이언트에게 보�
 
 좌측 - 새 항목 추가 - 설치한 'Smart Tomcat'
 
-1. 설치한 Tomcat 폴더 위치 선택 
+- 1. 설치한 Tomcat 폴더 위치 선택 
 
 만약 톰켓을 설치하고 처음 등록하면 에러가 발생할 수 있는데 해당 폴더에 접근 권한이 없어서일 가능성이 높다. 
 
 파일 탐색기를 실행해 직접 Tomcat을 설치한 위치를 열어 권한을 부여받고 다시 경로를 설정하면 해결된다. 
 
-2. Context Path
+- 2. Context Path
 
 해당 프로젝트 서버 실행 시에 따라다니는 경로로 "/"로 설정하면 아무것도 없는 경로로 설정된다. 원하는대로 설정해주면 된다. 
 
-3. VM options
+- 3. VM options
 
 "-Dfile.encoding=UTF-8" 입력 (한글 깨짐 방지)
 
-4. 포트 설정 
+- 4. 포트 설정 
 
 다른 프로젝트에서 설정한 포트와 충돌이 일어나지 않도록 설정
 
+- 5. 확인
+
+서버의 설정이 완료된 후에 서버를 실행을 완료하면 콘솔창에 주소가 생성되는데 해당 주소로 접속하면 index.jsp가 실행된다. 
 
 
 
