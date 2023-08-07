@@ -1,5 +1,5 @@
 ---
-title: "JAVA 정리"
+title: "Spring/Spring Boot"
 layout: archive
 permalink: categories/java-spring
 author_profile: true
