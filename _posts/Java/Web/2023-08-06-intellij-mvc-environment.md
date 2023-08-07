@@ -3,9 +3,9 @@ title:  "[Web/IDE] IntelliJ Community 버전에서 Spring(MVC)환경 구축"
 excerpt: "인텔리제이 커뮤니티 버전에서 MVC환경 구축하기"
 
 categories: # 분류하고싶은 카테고리 입력
-  - Web
+  - Spring
 tags:     # 중요 키워드
-  - [IntelliJ, Spring]
+  - [IntelliJ, MVC]
 
 toc: true
 toc_sticky: true
