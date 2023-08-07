@@ -98,8 +98,8 @@ Archetype : `org.apache.maven.archetypes:maven-archetype-webapp`
     <!-- SLF4J (Simple Logging Facade for Java) 버전 설정 -->
     <org.slf4j-version>1.7.25</org.slf4j-version>
   </properties>
-  <dependencies>
 
+  <dependencies>
     <!-- Spring 관련 의존성 설정 -->
     <dependency>
       <!-- 의존성의 그룹 ID 설정: org.springframework -->
