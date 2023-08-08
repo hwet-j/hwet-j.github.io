@@ -378,6 +378,19 @@ return값에 "home"이라고 적혀있는데, 기본 설정값으로 지정된 �
 
 
 
+❗ pom.xml에 설정을 JRE 버전을 1.8로 설정하였는데 JRE 버전에 1.6인 경우
+
+프로젝트 우클릭 - Build Path - Configure Build Path... 클릭 
+
+Libraries - JRE System Library 선택 - Edit.. 클릭
+
+![image](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/aed5660e-d465-40c8-abb2-4b5c8ae8768c)
+
+Execution environment 에서 JRE 1.8버전을 선택하고 Finish - Apply and Close 해주면 된다.
+
+![image](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/58bb5870-2e7a-4977-bd00-1339d6dd2e7b)
+
+
 *** 
 
 
