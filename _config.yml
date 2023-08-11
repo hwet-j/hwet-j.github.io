@@ -23,7 +23,7 @@ name                     : "Hwet 🍀"
 description              : "공부 & 취미 블로그"
 url                      : "https://hwet-j.github.io/" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  :  # the subpath of your site, e.g. "/blog"
-repository               : "" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+repository               : "hwet-j/blog-comment" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
@@ -41,7 +41,7 @@ comments:
     num_posts            : # 5 (default)
     colorscheme          : # "light" (default), "dark"
   utterances:
-    theme                : "photon-dark" # "github-light" (default), "github-dark"
+    theme                : "gruvbox-dark" # "github-light" (default), "github-dark"
     issue_term           : "pathname" # "pathname" (default)
   staticman:
     branch               : # "master"
@@ -75,7 +75,7 @@ facebook:
   username               :
   app_id                 :
   publisher              :
-og_image                 :  "/assets/images/my-cat.jpg" # Open Graph/Twitter default site image
+og_image                 :  "/assets/images/image.png" # Open Graph/Twitter default site image
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
