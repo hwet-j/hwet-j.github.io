@@ -1,11 +1,11 @@
 ---
-title:  "[Web] Spring 프로젝트 생성 시 존재하는 log4j.xml"  
-excerpt: "log4j.xml이 무엇인가?"
+title:  "[Web] Spring에서 Kakao API를 사용하여 로그인 구현하기"  
+excerpt: "API를 활용한 로그인 기능"
 
 categories: # 분류하고싶은 카테고리 입력
   - Spring
 tags:     # 중요 키워드
-  - [Xml]
+  - [KakaoAPI]
 
 toc: true
 toc_sticky: true
@@ -21,6 +21,9 @@ last_modified_at: 2023-08-21
 [참고](https://bcp0109.tistory.com/379)
 [참고](https://velog.io/@hwan2da/Spring-%EC%B9%B4%EC%B9%B4%EC%98%A4-%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0)
 {: .notice--warning}
+
+
+# 수정 진행 중입니다.
 
 
 ## Kakao API를 사용하여 로그인/회원가입 하기
