@@ -152,7 +152,7 @@ Repository를 사용하는 것 보다 EntityManager를 사용하면, 쿼리를 �
 
 
 ❗ 일반적으로 Repository의 기능을 사용하며, 사용자 정의 레포지토리를 구현하고자 할때 EntityManager를 사용한다고 한다.
-
+❗ EntityManager와 Repository에 대한 정보는 생각보다 많아서 다음에 따로 공부해서 정리하는게 나아보인다. 
 
 
 
