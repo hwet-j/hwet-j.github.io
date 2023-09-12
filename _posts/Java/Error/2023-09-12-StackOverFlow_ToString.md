@@ -46,7 +46,7 @@ at com.pits.auction.tostring. MusicAuction.toString(MusicAuction.java:7)
 
 > JsonIgnore
 
-![image](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/a3f76993-5026-42fd-958e-e1c57b10964a)
+![image](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/a3f76993-5026-42fd-958e-e1c57b10964a){width=35% height=35%}
 
 가장 간단하게 해결할 수 있는 방법은 참조하는 연관 객체들에 @JsonIgnore 어노테이션을 작성하여 해결 가능하다.
 
@@ -62,7 +62,7 @@ at com.pits.auction.tostring. MusicAuction.toString(MusicAuction.java:7)
 
 > ToString 조건설정
 
-![image](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/be2bd2ce-60b9-4502-863b-908e4ba3f515)
+![image](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/be2bd2ce-60b9-4502-863b-908e4ba3f515){width=35% height=35%}
 
 ![image](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/055b8e1f-51a3-4f68-95db-9238ffebef24)
 
@@ -72,7 +72,7 @@ at com.pits.auction.tostring. MusicAuction.toString(MusicAuction.java:7)
 
 > DTO 
 
-![image](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/6d985ea1-d99a-4017-be68-ab1ab3333a7d)
+![image](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/6d985ea1-d99a-4017-be68-ab1ab3333a7d){width=35% height=35%}
 
 데이터베이스의 정보를 사용시에 DTO와 같은 객체를 생성하여 참조 객체를 직접 담지 않고 필요한 정보만 사용하도록 설정하여 순환 참조가 발생하지않도록 방지 가능하다.
 
