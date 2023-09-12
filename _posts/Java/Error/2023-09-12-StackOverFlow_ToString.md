@@ -62,9 +62,9 @@ at com.pits.auction.tostring. MusicAuction.toString(MusicAuction.java:7)
 
 > ToString 조건설정
 
-![image](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/be2bd2ce-60b9-4502-863b-908e4ba3f515)
+![image](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/be2bd2ce-60b9-4502-863b-908e4ba3f515){: width="35%" height="35%"}
 
-![image](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/055b8e1f-51a3-4f68-95db-9238ffebef24)
+![image](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/055b8e1f-51a3-4f68-95db-9238ffebef24){: width="35%" height="35%"}
 
 @ToString 어노테이션에 조건을 설정하여 exclude 속성으로 양방향 매핑에 문제가 되는 필드를 ToString메서드에서 제외하도록 할 수 있다.
 
@@ -72,7 +72,7 @@ at com.pits.auction.tostring. MusicAuction.toString(MusicAuction.java:7)
 
 > DTO 
 
-![image](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/6d985ea1-d99a-4017-be68-ab1ab3333a7d)
+![image](https://github.com/hwet-j/hwet-j.github.io/assets/81364742/6d985ea1-d99a-4017-be68-ab1ab3333a7d){: width="35%" height="35%"}
 
 데이터베이스의 정보를 사용시에 DTO와 같은 객체를 생성하여 참조 객체를 직접 담지 않고 필요한 정보만 사용하도록 설정하여 순환 참조가 발생하지않도록 방지 가능하다.
 
