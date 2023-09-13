@@ -71,7 +71,7 @@ Non Fast-forward 에서는 충돌이 일어날 가능성이 있는데, 팀원A�
 이런 상황에 오게되면 해당 충돌이 일어난 부분을 작업한 개발자들이 모여 어떻게 수정을 진행하여 병합할 것인가 설정해 줘야한다.
 
 
-```mermaid
+<div class="mermaid"> 
 gitGraph
        commit id: "A"
        commit id: "B"
@@ -86,7 +86,7 @@ gitGraph
        commit id: "F"
        checkout main
        merge A-branch id: "Merge" tag: "A-B-D-F-G"
-```
+</div>
 
 Non Fast-forward 방식은 Fast-forward와 다르게 Commit 내역이 동일하지 않다. 
 
