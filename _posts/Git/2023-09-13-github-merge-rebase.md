@@ -40,7 +40,7 @@ merge는 크게 두 가지 방식이 존재한다
 이때, 더 앞서있는 브랜치 위에서 `A-branch`를 기준으로 병합하는 것을 <u>Fast-forward</u>라고 한다.  
 (이 과정에서는 충돌이 일어나지 않는다.)
 
-```mermaid
+<div class="mermaid"> 
 gitGraph
   commit id: "A"
   commit id: "B"
@@ -50,7 +50,7 @@ gitGraph
   commit id: "E"
   checkout main
   merge A-branch id: "Merge" tag: "A-B-C-D-E-F"
-`````
+</div>
 
 이때 `main`의 Commit 내역과 `A-branch`의 Commit 내역은 `A-B-C-D-E-F`로 동일하다.(Merge Commit을 F로 봤을때)
 
