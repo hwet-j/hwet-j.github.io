@@ -3,7 +3,7 @@ title:  "[IDE/Gitgub] Github로 협업하기 (Fork)"
 excerpt: "Github/IntelliJ를 사용해서 협업해보기"
 
 categories:
-  - IDE
+  - Git
 tags:
   - [Github, IntelliJ]
 
