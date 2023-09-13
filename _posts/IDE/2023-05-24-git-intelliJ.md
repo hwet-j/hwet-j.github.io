@@ -19,17 +19,17 @@ last_modified_at: 2023-09-12
 {: .notice--warning}
 
 
-## Github로 협업하기
+## 📌 Github로 협업하기
 
 Github로 협업하는 방식에는 여러가지 있지만, Fork를 통해서 협업하는 방법에 대해서 작성할 것이며,
 설명은 팀원, 팀장(협업 레포지토리)로 진행할 예정이며, Fork된 정보를 IntelliJ를 통해서 Github연동 하는 방법을 작성하고자 한다.
 
 
-### https://github.com/ 로그인 
+### 📎 https://github.com/ 로그인 
 
 자신(팀원)의 아이디로 로그인한다.
 
-### 협업할 레포지토리(팀장)에 접근하여 Fork 하기
+### 📎 협업할 레포지토리(팀장)에 접근하여 Fork 하기
 
 예시는 저의 레포지토리 주소로 들겠습니다. https://github.com/hwet-j/pearl 에 접속하여 우측 상단에 Fork 버튼한다.
 
@@ -46,7 +46,7 @@ Repository name은 자기 자신의 저장소에 저장할 이름을 설정하�
 생성되었다면 Github에서 협업할 준비가 완료된 것이다.
 
 
-### IntelliJ에서 Github 프로젝트 가져오기
+### 📎 IntelliJ에서 Github 프로젝트 가져오기
 
 1. IntelliJ 실행
 
@@ -61,7 +61,7 @@ Repository name은 자기 자신의 저장소에 저장할 이름을 설정하�
 6. 로그인이 완료되면 자신의 Github에 있는 Repository목록이 나오는데 여기서 Fork하면서 생성한 Repository선택 후 복제
 
 
-### IntellIJ에서 연동된 Github Repository에 Commit & Push 하기
+### 📎 IntellIJ에서 연동된 Github Repository에 Commit & Push 하기
 
 1. 업로드를 하기 위해서는 수정된 정보가 있어야함
 
@@ -77,7 +77,7 @@ Repository name은 자기 자신의 저장소에 저장할 이름을 설정하�
 
 7. Commit내용을 확인할 수 있으며 어떤 데이터가 올라가는지 확인가능. 올리려면 Push 클릭
 
-### IntellIJ에서 연동된 Github Repository의 정보 가져오기 (로컬 프로젝트 최신화)
+### 📎 IntellIJ에서 연동된 Github Repository의 정보 가져오기 (로컬 프로젝트 최신화)
 
 이클립스 및 Git 명령어의 pull 기능을 해야하는데 IntelliJ는 프로젝트 업데이트로 가능
 
@@ -93,7 +93,7 @@ Repository name은 자기 자신의 저장소에 저장할 이름을 설정하�
 
 
 
-> 관련 용어
+> ❓ 관련 용어
 
 - Branch : 하나의 Repository내에서 별도의 독립적인 공간을 생성하기 위해 Branch를 생성한다.
   - 기능별로 구현할 때 Branch를 생성하여 작업이 완료된 이후 master에 병합하고 삭제하는 방식으로 사용가능
