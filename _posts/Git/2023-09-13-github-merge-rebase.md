@@ -13,7 +13,7 @@ toc_sticky: true
 author: Hwet
 
 date: 2023-09-13
-last_modified_at: 2023-09-13
+last_modified_at: 2023-09-22
 ---
 
 
@@ -113,7 +113,6 @@ Merge와 다르게 새로운 커밋 F 가 생성되는 것이 아니라 `main`�
 
 <div class="mermaid"> 
 gitGraph
-      gitGraph
       commit id: "A"
       commit id: "B"
       branch A-branch
