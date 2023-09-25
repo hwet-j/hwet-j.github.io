@@ -35,14 +35,14 @@ last_modified_at: 2023-08-21
 
 ### 개발환경
 
-Spring boot 3.0.10
-Gradle
-JAVA 17
-Thymeleaf
-Lombok
-Spring Web
-Spring Data JPA
-Spring Security
+Spring boot 3.0.10  
+Gradle  
+JAVA 17  
+Thymeleaf  
+Lombok  
+Spring Web  
+Spring Data JPA  
+Spring Security  
 Spring Oauth2-Client
 
 ### Kakao API 등록하기SS
