@@ -177,10 +177,10 @@ public class SecurityConfig {
 ``` 
 # Oauth2 설정 부분
 .oauth2Login(oauth2Login -> oauth2Login
-					.loginPage("/login")
-					.userInfoEndpoint(userInfo -> userInfo
-							.userService(principalOauth2UserService))
-			)
+    .loginPage("/login")
+    .userInfoEndpoint(userInfo -> userInfo
+        .userService(principalOauth2UserService))
+)
 ```
 
 일반로그인 이외의 별도의 Oauth2Login 설정을 해줘야한다. 
@@ -268,7 +268,69 @@ API로 간편로그인이 가능하지만, 회원가입을 진행하여 별도�
 
 `로그인이 완료되면 요청되는 Controller`
 
+```java 
+@GetMapping({ "", "/" })
+public String index(Model model, HttpServletRequest request, HttpServletResponse response) {
+  Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
+  if (authentication.isAuthenticated() && !"anonymousUser".equals(authentication.getPrincipal())) {
+
+    User user = userRepository.findByUsername(authentication.getName());
+    if (user.getPassword() == null){
+
+      model.addAttribute("user", user);
+      model.addAttribute("joinForm", new JoinForm());	// 유효성 검사를 위한 Form 전달
+
+      if (user != null) {
+        new SecurityContextLogoutHandler().logout(request, response, SecurityContextHolder.getContext().getAuthentication());
+      }
+      return "join";
+    }
+    String username = authentication.getName();
+    model.addAttribute("data", "로그인 ID : " + username);
+    return "main";
+  } else {
+    model.addAttribute("data", "로그아웃 상태입니다.");
+    return "main";
+  }
+}
+```
+
+API를 통해서 정보를 받을 때, 회원가입 이력이없으면 회원가입을 진행하는 페이지를 Service에서 구현해보려고 했으나 원래 불가능한 것인지 방법을 찾지 못했다. 
+
+그래서 사용하게된 방법이 로그인 요청이 완료되면 요청되는 주소에서 정보를 확인해서 정보가 없다면 회원가입창으로 이동시키도록 구현했다. 
+
+회원가입 이력이 없으면 회원가입창으로 이동전에 로그인 정보는 없애주고(로그아웃) 이동하도록 설정하였다. 
+
+
+#### login.html
+
+```html 
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>로그인 페이지</title>
+</head>
+<body>
+<h1>로그인 페이지</h1>
+
+	<h1>Social Login</h1>
+	<br />
+	<a href="/oauth2/authorization/google" >
+		구글로그인
+	</a>
+	<a href="/oauth2/authorization/naver">
+		네이버로그인
+	</a>
+
+	<a href="/oauth2/authorization/kakao">
+		카카오로그인
+	</a>
+	<br />
+</body>
+</html>
+```
 
 
 
