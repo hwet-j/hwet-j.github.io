@@ -14,7 +14,7 @@ published: true
 author: Hwet
 
 date: 2023-08-21
-last_modified_at: 2023-08-21
+last_modified_at: 2023-09-25
 ---
 
 인터넷에서 검색하여 여러가지를 참고하여 정리하였습니다.  
@@ -23,8 +23,6 @@ last_modified_at: 2023-08-21
 [참고](https://loosie.tistory.com/302)
 {: .notice--warning}
 
-
-# 수정 진행 중입니다.
 
 
 ## Kakao API를 사용하여 로그인/회원가입 하기 (Oauth2)
@@ -263,6 +261,54 @@ API로 간편로그인이 가능하지만, 회원가입을 진행하여 별도�
 
 둘 다 존재하지 않으면 해당 API로 회원가입이력도 없고, 이메일로 저장된 내역도 없으므로 API를 통해 얻어지는 정보를 저장하고 리턴한다. 
 
+#### OAuth2UserInfo.java / KakaoUserInfo.java
+
+> API로 부터 전달받은 객체를 저장할 클래스
+
+```java 
+public interface OAuth2UserInfo {
+	String getProviderId();
+	String getProvider();
+	String getEmail();
+	String getName();
+}
+
+```
+
+```java 
+public class KakaoUserInfo implements OAuth2UserInfo{
+
+	private Map<String, Object> attributes;
+	
+    public KakaoUserInfo(Map<String, Object> attributes) {
+        this.attributes = attributes;
+    }
+	
+    @Override
+    public String getProviderId() {
+        return attributes.get("id").toString();
+    }
+
+    @Override
+    public String getName() {
+        return (String) attributes.get("name");
+    }
+
+    @Override
+    public String getEmail() {
+        return (String) ((Map<?, ?>) attributes.get("kakao_account")).get("email");
+
+    }
+
+	@Override
+	public String getProvider() {
+		return "kakao";
+	}
+}
+
+```
+
+
 
 #### IndexController.java
 
@@ -320,6 +366,7 @@ API를 통해서 정보를 받을 때, 회원가입 이력이없으면 회원가
 	<a href="/oauth2/authorization/google" >
 		구글로그인
 	</a>
+
 	<a href="/oauth2/authorization/naver">
 		네이버로그인
 	</a>
@@ -332,31 +379,9 @@ API를 통해서 정보를 받을 때, 회원가입 이력이없으면 회원가
 </html>
 ```
 
+이렇게하면 로그인은 가능하며, 회원가입 페이지와 유저테이블 및 로직은 적당히 설정해주시기 바랍니다. 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+굳이 회원가입을 진행하고싶지 않다면, `IndexController`만 수정하면 회원가입 진행없이 로그인 가능
 
 
 
