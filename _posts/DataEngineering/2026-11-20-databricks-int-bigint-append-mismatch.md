@@ -235,7 +235,26 @@ ALTER TABLE main.demo.target_tbl ALTER COLUMN row_cnt TYPE BIGINT;
 
 - 공식 문서: DBR **15.4 LTS 이상**, 활성화하면 **reader/writer 프로토콜이 올라가며** type widening이 켜진 테이블은 **DBR 15.4 LTS 이상에서만 읽을 수 있습니다.** 읽는 도구와 클러스터 버전을 먼저 확인하세요.
 
-# 10. 체크리스트
+# 10. 이 글의 근거 (무엇을 직접 테스트했고, 무엇이 문서·추정인가)
+
+| # | 주장 | 근거 유형 | 근거 내용 |
+|---|---|---|---|
+| 1 | INT DataFrame을 BIGINT 테이블에 `saveAsTable` append하면 `DELTA_FAILED_TO_MERGE_FIELDS`로 실패한다 | **직접 테스트** | 운영 적재 Job에서 실제 발생 → **임시 테이블(`BIGINT` 컬럼)에 INT DataFrame을 append해 같은 오류를 재현** |
+| 2 | 값의 크기와 무관하다 | **직접 확인(실제 로그)** | 같은 Job에서 SUCCESS 이력(건수 약 14억)과 `except`의 FAIL 이력(건수 `0`) **둘 다 같은 오류** |
+| 3 | 오버플로가 원인이 아니다 | **직접 확인(실측)** | 적재 건수가 INT 최댓값(2,147,483,647) **이내** |
+| 4 | 건수 컬럼을 대상 테이블 타입으로 cast하면 해결된다 | **직접 테스트** | cast 적용 후 **같은 오류가 발생하지 않음**을 확인 |
+| 5 | 건수 컬럼에 cast가 없었고 파이썬 int가 `IntegerType`이 되었다 | **직접 코드 확인** | 해당 컬럼만 `lit(값)`에 cast가 없었고 다른 컬럼에는 cast가 있었음 |
+| 6 | SQL `INSERT`는 정수를 BIGINT 컬럼에 안전하게 cast한다 | **공식 문서** | Schema enforcement 문서의 `INSERT` 예시(`42` → `BIGINT`). **이 환경에서 직접 테스트하지는 않음** |
+| 7 | type widening은 이번 사례와 방향이 반대다 | **공식 문서** | Type widening 문서(대상이 좁고 데이터가 넓을 때 + 대상에 기능이 켜져 있을 때) |
+| 8 | `insertInto`는 성공하고 `mergeSchema`는 INT를 확장하지 않는다 | **공식 아님(외부 보고)** | Delta Lake 이슈, 커뮤니티 답변. **직접 확인 필요** |
+| 9 | 작은 정수 `lit()`은 INT, 큰 값은 BIGINT로 추론된다 | **추정** | 알려진 PySpark 동작이나 **직접 확인 필요**(`printSchema()`) |
+| 10 | 오류 이름이 "필드 병합 실패"이므로 스키마 병합 단계에서 실패하는 것 같다 | **추정** | 오류 이름과 재현 결과에서의 추정. 내부 동작은 문서에 없음 |
+
+- **테스트 환경**: Databricks on AWS, Unity Catalog. (Databricks Runtime 버전은 기록되어 있지 않음 → 재현 시 **DBR 버전을 함께 기록**해 두세요.)
+- 이 글의 **결론 중 직접 테스트로 확인된 것은 1~5번**이고, 나머지는 문서나 추정입니다. 쓰기 방법별 결과(4장 표)는 직접 실행해서 확인하는 것을 권합니다.
+- 이 사례는 포트폴리오 자료로도 정리했습니다. (`portfolio/` 폴더)
+
+# 11. 체크리스트
 
 - [ ] `DELTA_FAILED_TO_MERGE_FIELDS`를 보면 **컬럼 타입**(INT/BIGINT, DECIMAL 정밀도, TIMESTAMP/TIMESTAMP_NTZ)부터 비교하는가? (오류 메시지에 타입이 안 나옴)
 - [ ] 쓰기 전에 **DataFrame 스키마와 테이블 스키마를 나란히 출력**해 비교하는가?
@@ -253,7 +272,7 @@ for f in spark.table("main.demo.target_tbl").schema.fields:
         print(f"[타입 불일치] {f.name}: DataFrame={src.get(f.name)}, Table={f.dataType}")
 ```
 
-# 11. 한 줄 정리
+# 12. 한 줄 정리
 
 - **INT DataFrame → BIGINT 테이블**을 `saveAsTable` append로 쓰면 **값과 무관하게 타입 불일치로 실패**한다. (재현 확인)
 - 공식 문서는 **SQL INSERT / MERGE가 safe cast를 시도**한다고 설명하지만, **DataFrame `saveAsTable` append의 이 동작은 문서에 직접 없다.** 쓰기 방법별 차이는 직접 테스트로 확인한다.
