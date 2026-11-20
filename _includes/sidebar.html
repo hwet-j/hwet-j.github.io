@@ -1,8 +1,7 @@
 {% if page.author_profile or layout.author_profile or page.sidebar %}
-  <!-- 사이드바 열기/닫기 -->
-  <button type="button" class="sidebar-toggle sidebar-toggle--open" aria-controls="site-sidebar" aria-expanded="false" aria-label="사이드바 열기" title="사이드바 열기">☰ 메뉴</button>
+  <!-- 사이드바 열기/닫기: 표식만 있는 단일 버튼 -->
+  <button type="button" class="sidebar-toggle" aria-controls="site-sidebar" aria-expanded="true" aria-label="사이드바 열기/닫기"></button>
   <div class="sidebar sticky" id="site-sidebar">
-  <button type="button" class="sidebar-toggle sidebar-toggle--close" aria-controls="site-sidebar" aria-expanded="true" aria-label="사이드바 닫기" title="사이드바 닫기">◀ 접기</button>
   {% if page.author_profile or layout.author_profile %}{% include author-profile.html %}{% endif %}
   {% if page.sidebar %}
     {% for s in page.sidebar %}
