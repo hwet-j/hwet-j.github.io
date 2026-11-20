@@ -15,3 +15,79 @@
     font-weight: normal;
     font-style: normal;
 }
+
+
+// 사이드바 열기/닫기 버튼 ------------------------------------------------
+.sidebar-toggle {
+    font-family: inherit;
+    font-size: $type-size-6;
+    line-height: 1;
+    color: $text-color;
+    background: $background-color;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    padding: 0.55em 0.8em;
+    cursor: pointer;
+    opacity: 0.85;
+    transition: opacity 0.2s ease-in-out;
+
+    &:hover,
+    &:focus {
+        opacity: 1;
+    }
+}
+
+// 사이드바 안쪽의 "접기" 버튼
+.sidebar-toggle--close {
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+
+// 접힌 상태에서 나타나는 "메뉴" 버튼 (기본은 숨김)
+.sidebar-toggle--open {
+    display: none;
+    margin: 0.5em 0;
+}
+
+html.sidebar-collapsed {
+    .sidebar {
+        display: none;
+    }
+
+    .sidebar-toggle--open {
+        display: inline-block;
+    }
+}
+
+// 데스크톱: 접으면 본문이 전체 너비를 사용하고, 열기 버튼은 화면 왼쪽에 고정
+@include breakpoint($large) {
+    html.sidebar-collapsed {
+        .sidebar-toggle--open {
+            position: fixed;
+            top: 6.4em;
+            left: 0.6em;
+            margin: 0;
+            z-index: 15;
+        }
+
+        #main {
+            padding-left: 6em;
+        }
+
+        // 상단 경로(Home / ...)도 본문 왼쪽 선에 맞춤
+        .breadcrumbs {
+            padding-left: 6em;
+
+            ol {
+                width: 100%;
+            }
+        }
+
+        .page,
+        .archive {
+            width: 100%;
+            padding-right: 0;
+        }
+    }
+}

@@ -1,5 +1,8 @@
 {% if page.author_profile or layout.author_profile or page.sidebar %}
-  <div class="sidebar sticky">
+  <!-- 사이드바 열기/닫기 -->
+  <button type="button" class="sidebar-toggle sidebar-toggle--open" aria-controls="site-sidebar" aria-expanded="false" aria-label="사이드바 열기" title="사이드바 열기">☰ 메뉴</button>
+  <div class="sidebar sticky" id="site-sidebar">
+  <button type="button" class="sidebar-toggle sidebar-toggle--close" aria-controls="site-sidebar" aria-expanded="true" aria-label="사이드바 닫기" title="사이드바 닫기">◀ 접기</button>
   {% if page.author_profile or layout.author_profile %}{% include author-profile.html %}{% endif %}
   {% if page.sidebar %}
     {% for s in page.sidebar %}
@@ -21,5 +24,31 @@
   {% endif %}
 
   </div>
-{% endif %}
 
+  <script>
+    (function () {
+      var KEY = 'sidebar-collapsed';
+      var root = document.documentElement;
+      var buttons = document.querySelectorAll('.sidebar-toggle');
+
+      function apply(collapsed) {
+        root.classList.toggle('sidebar-collapsed', collapsed);
+        for (var i = 0; i < buttons.length; i++) {
+          buttons[i].setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+        }
+      }
+      function save(collapsed) {
+        try { localStorage.setItem(KEY, collapsed ? '1' : '0'); } catch (e) {}
+      }
+
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener('click', function () {
+          var collapsed = !root.classList.contains('sidebar-collapsed');
+          apply(collapsed);
+          save(collapsed);
+        });
+      }
+      apply(root.classList.contains('sidebar-collapsed'));
+    })();
+  </script>
+{% endif %}

@@ -10,4 +10,13 @@
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
 
+<!-- 사이드바 접힘 상태를 첫 렌더링 전에 복원 (깜빡임 방지) -->
+<script>
+  try {
+    if (localStorage.getItem('sidebar-collapsed') === '1') {
+      document.documentElement.classList.add('sidebar-collapsed');
+    }
+  } catch (e) {}
+</script>
+
 <!-- end custom head snippets -->
